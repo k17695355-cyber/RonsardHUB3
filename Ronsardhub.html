@@ -1,0 +1,7664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoleRonsardHub</title>
+
+<style>
+
+/* =========================================================
+   THEME
+   ========================================================= */
+
+:root{
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --text:#172033;
+    --muted:#68748a;
+
+    --primary:#16a34a;
+    --primary2:#22c55e;
+    --accent:#4ade80;
+    --primary-rgb:22,163,74;
+    --blue:#3d6df2;
+    --hero-start:#16a34a;
+    --hero-end:#4ade80;
+    --hero-text:#0d4b10;
+
+    --border:#e4e9f2;
+    --shadow:0 10px 30px rgba(28,43,72,.08);
+    --scrollbar-track:rgba(104,116,138,.12);
+    --scrollbar-thumb:rgba(var(--primary-rgb),.52);
+    --scrollbar-thumb-hover:var(--primary);
+
+    --radius:17px;
+    --heading-font:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --body-font:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark{
+    --bg:#000000;
+    --card:#111111;
+    --text:#f4f7ff;
+    --muted:#9ca8bd;
+    --border:#292929;
+    --shadow:0 10px 30px rgba(0,0,0,.45);
+    --scrollbar-track:rgba(255,255,255,.07);
+    --scrollbar-thumb:rgba(var(--primary-rgb),.55);
+    --scrollbar-thumb-hover:var(--accent);
+}
+
+body.theme-halloween{
+    --primary:#c45a0b;
+    --primary2:#ea8a17;
+    --accent:#f5b642;
+    --primary-rgb:196,90,11;
+    --hero-start:#40221f;
+    --hero-end:#ad421d;
+    --hero-text:#fff7ed;
+}
+
+body.theme-halloween:not(.dark){
+    --bg:#fff8ef;
+    --card:#fffdf8;
+    --text:#3b2319;
+    --muted:#80685a;
+    --border:#ead8c9;
+    --shadow:0 10px 30px rgba(68,36,20,.1);
+}
+
+body.theme-christmas{
+    --primary:#b8323b;
+    --primary2:#d04b4e;
+    --accent:#36a36f;
+    --primary-rgb:184,50,59;
+    --hero-start:#15533d;
+    --hero-end:#9f2937;
+    --hero-text:#fffdf4;
+}
+
+body.theme-christmas:not(.dark){
+    --bg:#f2f8f4;
+    --card:#fffefa;
+    --text:#20372d;
+    --muted:#64776c;
+    --border:#dce8df;
+    --shadow:0 10px 30px rgba(27,75,51,.1);
+}
+
+body.theme-easter{
+    --primary:#367a51;
+    --primary2:#77a85b;
+    --accent:#e7b944;
+    --primary-rgb:54,122,81;
+    --hero-start:#2d6a4f;
+    --hero-end:#4d8f61;
+    --hero-text:#fffdf5;
+}
+
+body.theme-easter:not(.dark){
+    --bg:#f2f8f1;
+    --card:#fffdf5;
+    --text:#2b392d;
+    --muted:#68796c;
+    --border:#dce8d9;
+    --shadow:0 10px 30px rgba(48,93,54,.1);
+}
+
+body.theme-spring{
+    --primary:#34c759;
+    --primary2:#22c55e;
+    --accent:#7dd3fc;
+    --primary-rgb:52,199,89;
+    --hero-start:#2f9e44;
+    --hero-end:#7dd3fc;
+    --hero-text:#f3fff6;
+}
+
+body.theme-spring:not(.dark){
+    --bg:#f1fbf3;
+    --card:#ffffff;
+    --text:#1c3b2a;
+    --muted:#577764;
+    --border:#dfeee2;
+    --shadow:0 10px 30px rgba(38,103,62,.08);
+}
+
+body.theme-summer{
+    --primary:#f59e0b;
+    --primary2:#f97316;
+    --accent:#38bdf8;
+    --primary-rgb:245,158,11;
+    --hero-start:#fbbf24;
+    --hero-end:#f97316;
+    --hero-text:#fffdf6;
+}
+
+body.theme-summer:not(.dark){
+    --bg:#fffaf2;
+    --card:#fffefc;
+    --text:#3d2f1d;
+    --muted:#7d6552;
+    --border:#f4dec1;
+    --shadow:0 10px 30px rgba(115,78,28,.12);
+}
+
+body.theme-rain{
+    --primary:#2563eb;
+    --primary2:#0ea5e9;
+    --accent:#67e8f9;
+    --primary-rgb:37,99,235;
+    --hero-start:#1d4ed8;
+    --hero-end:#0f766e;
+    --hero-text:#f2fbff;
+}
+
+body.theme-rain:not(.dark){
+    --bg:#eef8ff;
+    --card:#f9feff;
+    --text:#16324a;
+    --muted:#586f86;
+    --border:#d2e9f6;
+    --shadow:0 10px 30px rgba(16,67,88,.12);
+}
+
+body.theme-cloudy{
+    --primary:#64748b;
+    --primary2:#94a3b8;
+    --accent:#cbd5e1;
+    --primary-rgb:100,116,139;
+    --hero-start:#475569;
+    --hero-end:#94a3b8;
+    --hero-text:#f8fafc;
+}
+
+body.theme-winter{
+    --primary:#4f46e5;
+    --primary2:#60a5fa;
+    --accent:#bfdbfe;
+    --primary-rgb:79,70,229;
+    --hero-start:#3b5b9a;
+    --hero-end:#7c98d8;
+    --hero-text:#f6faff;
+}
+
+body.theme-winter:not(.dark){
+    --bg:#f4f8ff;
+    --card:#ffffff;
+    --text:#1c2d4c;
+    --muted:#5d738d;
+    --border:#dfe9ff;
+    --shadow:0 10px 30px rgba(70,90,149,.09);
+}
+
+body.theme-cloudy:not(.dark){
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --text:#273549;
+    --muted:#5d6d7d;
+    --border:#dfe7f0;
+    --shadow:0 10px 30px rgba(71,85,105,.08);
+}
+
+body.theme-thanksgiving{
+    --primary:#b45309;
+    --primary2:#9a4d1f;
+    --accent:#d97706;
+    --primary-rgb:180,83,9;
+    --hero-start:#7c3f17;
+    --hero-end:#c76a1d;
+    --hero-text:#fffdf7;
+}
+
+body.theme-thanksgiving:not(.dark){
+    --bg:#fff6ef;
+    --card:#fffdf9;
+    --text:#3d2b1d;
+    --muted:#7c5b49;
+    --border:#f1d9c9;
+    --shadow:0 10px 30px rgba(99,53,24,.1);
+}
+
+body.theme-spring.theme-easter:not(.dark),
+body.theme-easter.theme-spring:not(.dark){
+    --bg:#f0fff4;
+    --card:#fffefc;
+    --text:#1d3a2b;
+    --muted:#597a68;
+    --border:#d9ebde;
+    --shadow:0 10px 30px rgba(35,118,67,.11);
+    --primary:#2f9e44;
+    --primary2:#7bc96c;
+    --accent:#f7c75b;
+    --primary-rgb:47,158,68;
+    --hero-start:#2f9e44;
+    --hero-end:#f7c75b;
+    --hero-text:#f7fff6;
+}
+
+body.theme-summer.theme-rain:not(.dark),
+body.theme-rain.theme-summer:not(.dark){
+    --bg:#fff6e7;
+    --card:#fffdf8;
+    --text:#2e2b29;
+    --muted:#78665e;
+    --border:#f0d9b6;
+    --shadow:0 12px 30px rgba(107,74,24,.12);
+    --primary:#f59e0b;
+    --primary2:#0ea5e9;
+    --accent:#7dd3fc;
+    --primary-rgb:245,158,11;
+    --hero-start:#f59e0b;
+    --hero-end:#0ea5e9;
+    --hero-text:#fffdf7;
+}
+
+body.theme-cloudy.theme-summer:not(.dark),
+body.theme-summer.theme-cloudy:not(.dark){
+    --bg:#f3f6fb;
+    --card:#ffffff;
+    --text:#2d3748;
+    --muted:#65758a;
+    --border:#dfe8f0;
+    --shadow:0 10px 28px rgba(71,85,105,.1);
+    --primary:#fbbf24;
+    --primary2:#94a3b8;
+    --accent:#e2e8f0;
+    --primary-rgb:251,191,36;
+    --hero-start:#fbbf24;
+    --hero-end:#94a3b8;
+    --hero-text:#fffdf8;
+}
+
+body.theme-halloween.theme-cloudy:not(.dark),
+body.theme-cloudy.theme-halloween:not(.dark){
+    --bg:#fbf5ee;
+    --card:#fffdf9;
+    --text:#38291f;
+    --muted:#766659;
+    --border:#e8dbce;
+    --shadow:0 10px 30px rgba(68,36,20,.1);
+    --primary:#f59e0b;
+    --primary2:#7c3aed;
+    --accent:#e5e7eb;
+    --primary-rgb:245,158,11;
+    --hero-start:#1d1b1e;
+    --hero-end:#b45309;
+    --hero-text:#fff7ed;
+}
+
+body.theme-christmas.theme-winter:not(.dark),
+body.theme-winter.theme-christmas:not(.dark){
+    --bg:#eefaf7;
+    --card:#ffffff;
+    --text:#1e2b2a;
+    --muted:#5b6f6d;
+    --border:#dfece7;
+    --shadow:0 12px 30px rgba(28,68,52,.1);
+    --primary:#2e9d68;
+    --primary2:#60a5fa;
+    --accent:#dbeafe;
+    --primary-rgb:46,157,104;
+    --hero-start:#14532d;
+    --hero-end:#60a5fa;
+    --hero-text:#f7fffb;
+}
+
+body.theme-thanksgiving.theme-cloudy:not(.dark),
+body.theme-cloudy.theme-thanksgiving:not(.dark){
+    --bg:#fff5eb;
+    --card:#fffbf7;
+    --text:#362918;
+    --muted:#785d49;
+    --border:#f0dbc9;
+    --shadow:0 12px 30px rgba(112,70,32,.1);
+    --primary:#b45309;
+    --primary2:#94a3b8;
+    --accent:#d1d5db;
+    --primary-rgb:180,83,9;
+    --hero-start:#b45309;
+    --hero-end:#94a3b8;
+    --hero-text:#fffdf8;
+}
+
+body.theme-thanksgiving.theme-rain:not(.dark),
+body.theme-rain.theme-thanksgiving:not(.dark){
+    --bg:#fff4ea;
+    --card:#fffdfb;
+    --text:#2d231d;
+    --muted:#776559;
+    --border:#f1d9c8;
+    --shadow:0 12px 30px rgba(74,55,37,.1);
+    --primary:#b45309;
+    --primary2:#0ea5e9;
+    --accent:#a7f3d0;
+    --primary-rgb:180,83,9;
+    --hero-start:#c76a1d;
+    --hero-end:#0ea5e9;
+    --hero-text:#fffdf8;
+}
+
+body.theme-spring.theme-easter.dark,
+body.theme-easter.theme-spring.dark{
+    --bg:#10251a;
+    --card:#182f22;
+    --text:#edf8ef;
+    --muted:#a8c5b1;
+    --border:#2d4b36;
+    --shadow:0 12px 30px rgba(0,0,0,.32);
+    --primary:#4ade80;
+    --primary2:#86efac;
+    --accent:#facc15;
+    --primary-rgb:74,222,128;
+    --hero-start:#17452e;
+    --hero-end:#66501c;
+    --hero-text:#f4fff6;
+}
+
+body.theme-summer.theme-rain.dark,
+body.theme-rain.theme-summer.dark{
+    --bg:#101f2c;
+    --card:#172b39;
+    --text:#edf7fc;
+    --muted:#a9c0cf;
+    --border:#2b4859;
+    --shadow:0 12px 30px rgba(0,0,0,.34);
+    --primary:#fbbf24;
+    --primary2:#38bdf8;
+    --accent:#7dd3fc;
+    --primary-rgb:251,191,36;
+    --hero-start:#72531a;
+    --hero-end:#075985;
+    --hero-text:#f4fbff;
+}
+
+body.theme-cloudy.theme-summer.dark,
+body.theme-summer.theme-cloudy.dark{
+    --bg:#1b2430;
+    --card:#252f3b;
+    --text:#f2f6fa;
+    --muted:#b6c2d0;
+    --border:#3a4858;
+    --shadow:0 12px 30px rgba(0,0,0,.34);
+    --primary:#fbbf24;
+    --primary2:#a8b7c8;
+    --accent:#e2e8f0;
+    --primary-rgb:251,191,36;
+    --hero-start:#725719;
+    --hero-end:#475569;
+    --hero-text:#fffaf0;
+}
+
+body.theme-halloween.theme-cloudy.dark,
+body.theme-cloudy.theme-halloween.dark{
+    --bg:#191820;
+    --card:#24232d;
+    --text:#fff4e8;
+    --muted:#c2b4a7;
+    --border:#403945;
+    --shadow:0 12px 30px rgba(0,0,0,.4);
+    --primary:#f59e0b;
+    --primary2:#a78bfa;
+    --accent:#e5e7eb;
+    --primary-rgb:245,158,11;
+    --hero-start:#241d2a;
+    --hero-end:#9a481f;
+    --hero-text:#fff7ed;
+}
+
+body.theme-christmas.theme-winter.dark,
+body.theme-winter.theme-christmas.dark{
+    --bg:#10221e;
+    --card:#19302a;
+    --text:#effaf6;
+    --muted:#aac4bc;
+    --border:#2d4b42;
+    --shadow:0 12px 30px rgba(0,0,0,.34);
+    --primary:#4ade80;
+    --primary2:#60a5fa;
+    --accent:#bfdbfe;
+    --primary-rgb:74,222,128;
+    --hero-start:#14532d;
+    --hero-end:#1e4f7a;
+    --hero-text:#f4fffb;
+}
+
+body.theme-thanksgiving.theme-cloudy.dark,
+body.theme-cloudy.theme-thanksgiving.dark{
+    --bg:#251a14;
+    --card:#32241b;
+    --text:#fff5e9;
+    --muted:#ccb29d;
+    --border:#4b3527;
+    --shadow:0 12px 30px rgba(0,0,0,.36);
+    --primary:#f59e0b;
+    --primary2:#a8b7c8;
+    --accent:#d1d5db;
+    --primary-rgb:245,158,11;
+    --hero-start:#7c3f17;
+    --hero-end:#475569;
+    --hero-text:#fffaf3;
+}
+
+body.theme-thanksgiving.theme-rain.dark,
+body.theme-rain.theme-thanksgiving.dark{
+    --bg:#231a16;
+    --card:#30231e;
+    --text:#fff4eb;
+    --muted:#c9b3a5;
+    --border:#4a342a;
+    --shadow:0 12px 30px rgba(0,0,0,.36);
+    --primary:#f59e0b;
+    --primary2:#38bdf8;
+    --accent:#a7f3d0;
+    --primary-rgb:245,158,11;
+    --hero-start:#9a4d1f;
+    --hero-end:#075985;
+    --hero-text:#fff8f0;
+}
+
+body.theme-halloween .hero:after,
+body.theme-christmas .hero:after,
+body.theme-easter .hero:after,
+body.theme-spring .hero:after,
+body.theme-summer .hero:after,
+body.theme-rain .hero:after,
+body.theme-cloudy .hero:after,
+body.theme-winter .hero:after,
+body.theme-thanksgiving .hero:after{
+    width:auto;
+    height:auto;
+    border:0;
+    border-radius:0;
+    right:26px;
+    top:16px;
+    font-size:142px;
+    line-height:1;
+    opacity:.3;
+    transform:rotate(8deg);
+}
+
+body.theme-halloween .hero:after{content:"🎃"}
+body.theme-christmas .hero:after{content:"🎄"}
+body.theme-easter .hero:after{content:"🐣"}
+body.theme-spring .hero:after{content:"🌼"}
+body.theme-summer .hero:after{content:"☀️"}
+body.theme-rain .hero:after{content:"🌧️"}
+body.theme-cloudy .hero:after{content:"☁️"}
+body.theme-winter .hero:after{content:"❄️"}
+body.theme-thanksgiving .hero:after{content:"🦃"}
+body.theme-spring.theme-easter .hero:after{content:"🌼🐣"}
+body.theme-summer.theme-rain .hero:after{content:"☀️🌧️"}
+body.theme-cloudy.theme-summer .hero:after{content:"☁️☀️"}
+body.theme-halloween.theme-cloudy .hero:after{content:"🎃☁️"}
+body.theme-christmas.theme-winter .hero:after{content:"🎄❄️"}
+body.theme-thanksgiving.theme-cloudy .hero:after{content:"🦃☁️"}
+body.theme-thanksgiving.theme-rain .hero:after{content:"🦃🌧️"}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+
+    font-family:var(--body-font);
+
+    background:var(--bg);
+    color:var(--text);
+
+    transition:
+        background .25s,
+        color .25s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family:var(--heading-font);
+    letter-spacing:-.02em;
+    line-height:1.12;
+    font-weight:800;
+}
+
+p,
+span,
+button,
+input,
+select,
+small,
+label,
+li,
+strong{
+    letter-spacing:0;
+}
+
+html,
+body,
+.gradePickerDialog{
+    scrollbar-width:thin;
+    scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.gradePickerDialog::-webkit-scrollbar{
+    width:9px;
+    height:9px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+.gradePickerDialog::-webkit-scrollbar-track{
+    background:var(--scrollbar-track);
+    border-radius:999px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+.gradePickerDialog::-webkit-scrollbar-thumb{
+    background:var(--scrollbar-thumb);
+    border:2px solid var(--bg);
+    border-radius:999px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+.gradePickerDialog::-webkit-scrollbar-thumb:hover{
+    background:var(--scrollbar-thumb-hover);
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+    border:0;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app{
+    min-height:100vh;
+    display:flex;
+}
+
+.introLoader{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:grid;
+    place-items:center;
+    background:var(--bg);
+    color:var(--text);
+    opacity:1;
+    visibility:visible;
+    transition:opacity .45s ease,visibility .45s ease;
+}
+
+.introLoader.isDone{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.introWordmark{
+    display:flex;
+    align-items:center;
+    flex-wrap:nowrap;
+    gap:10px;
+    font-size:26px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.introMark{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    border-radius:11px;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:#000000;
+    font-size:17px;
+}
+
+.introName{
+    display:flex;
+    align-items:center;
+    font-family:"Brush Script MT","Segoe Script",cursive;
+    font-style:italic;
+    font-size:30px;
+    font-weight:900;
+    color:#172033;
+    -webkit-text-stroke:.6px currentColor;
+    white-space:nowrap;
+}
+
+body.dark .introName{
+    color:#f4f7ff;
+}
+
+.introHub{
+    display:flex;
+    align-items:center;
+    padding:4px 7px;
+    border-radius:6px;
+    background:var(--primary);
+    color:#000000;
+    font-size:17px;
+    white-space:nowrap;
+}
+
+body.dark .introMark,
+body.dark .introHub{
+    color:#ffffff;
+}
+
+.loaderChar{
+    display:inline-block;
+    white-space:pre;
+    will-change:transform;
+    transition:transform .24s cubic-bezier(.2,.8,.2,1);
+}
+
+@media(max-width:480px){
+    .introWordmark{
+        gap:7px;
+        font-size:21px;
+    }
+
+    .introMark{
+        width:38px;
+        height:38px;
+    }
+
+    .introName{
+        font-size:25px;
+    }
+
+    .introHub{
+        font-size:15px;
+    }
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar{
+    width:250px;
+
+    background:var(--card);
+
+    border-right:1px solid var(--border);
+
+    padding:22px 16px;
+
+    position:fixed;
+    inset:0 auto 0 0;
+
+    z-index:10;
+
+    transition:.25s;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo{
+    font-weight:900;
+    font-size:21px;
+
+    margin:4px 8px 26px;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+@keyframes logoFloat{
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+}
+
+.logoMark,
+.logoName,
+.logoHub{
+    animation:logoFloat 1.4s ease-in-out infinite;
+}
+
+.logoName{
+    animation-delay:.15s;
+}
+
+.logoHub{
+    animation-delay:.3s;
+}
+
+.logoMark{
+    width:38px;
+    height:38px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--accent)
+        );
+
+    display:grid;
+    place-items:center;
+
+    color:white;
+    font-weight:900;
+}
+
+.logoName{
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-style:italic;
+    font-weight:700;
+
+    letter-spacing:.3px;
+}
+
+.logoHub{
+    background:var(--primary);
+    color:white;
+
+    padding:4px 7px;
+
+    border-radius:6px;
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    font-size:17px;
+    font-weight:800;
+    font-style:normal;
+}
+
+.logo::after{
+    content:"";
+    margin-left:auto;
+    font-size:19px;
+    animation:seasonalTwinkle 2.6s ease-in-out infinite;
+}
+
+body.theme-halloween .logo::after{content:"🕸️"}
+body.theme-christmas .logo::after{content:"❄️"}
+body.theme-easter .logo::after{content:"🌷"}
+body.theme-spring .logo::after{content:"🌼"}
+body.theme-summer .logo::after{content:"☀️"}
+body.theme-rain .logo::after{content:"🌧️"}
+body.theme-cloudy .logo::after{content:"☁️"}
+body.theme-winter .logo::after{content:"❄️"}
+body.theme-thanksgiving .logo::after{content:"🦃"}
+
+@keyframes seasonalTwinkle{
+    0%,100%{transform:rotate(-8deg) scale(.95)}
+    50%{transform:rotate(8deg) scale(1.08)}
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav button{
+    width:100%;
+
+    padding:12px 13px;
+    margin:4px 0;
+
+    background:transparent;
+
+    color:var(--muted);
+
+    border-radius:11px;
+
+    text-align:left;
+
+    transition:.2s;
+}
+
+.nav button.active,
+.nav button:hover{
+    background:rgba(var(--primary-rgb),.11);
+    color:var(--primary);
+    font-weight:700;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.sideBottom{
+    position:absolute;
+
+    bottom:18px;
+    left:16px;
+    right:16px;
+    display:grid;
+    gap:10px;
+}
+
+.themeControls label{
+    display:block;
+    margin-bottom:5px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+}
+
+.seasonTrigger{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:8px 10px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:linear-gradient(135deg,rgba(var(--primary-rgb),.12),var(--card));
+    color:var(--text);
+    text-align:left;
+    transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+
+.seasonTrigger:hover{
+    transform:translateY(-1px);
+    border-color:var(--primary);
+    box-shadow:0 6px 16px rgba(var(--primary-rgb),.12);
+}
+
+.seasonTriggerIcon{
+    width:34px;
+    height:34px;
+    flex:0 0 34px;
+    display:grid;
+    place-items:center;
+    border-radius:10px;
+    background:var(--primary);
+    color:#fff;
+    font-size:18px;
+}
+
+.seasonTriggerCopy{
+    min-width:0;
+    display:grid;
+    gap:2px;
+}
+
+.seasonTriggerTitle{
+    font-size:13px;
+    font-weight:800;
+}
+
+.seasonTriggerCurrent{
+    overflow:hidden;
+    color:var(--muted);
+    font-size:11px;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.seasonTriggerChevron{
+    margin-left:auto;
+    color:var(--primary);
+    font-size:19px;
+}
+
+.themeBtn{
+    width:100%;
+
+    padding:11px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+    color:var(--text);
+
+    border-radius:11px;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.main{
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    padding:26px;
+
+    max-width:1600px;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar{
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:24px;
+
+    gap:15px;
+}
+
+.topbar h1{
+    margin:0;
+    font-size:27px;
+    letter-spacing:-.02em;
+    color:var(--text);
+    text-shadow:none;
+}
+
+.pill{
+    padding:9px 13px;
+
+    border-radius:999px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    color:var(--muted);
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.02em;
+}
+
+
+/* =========================================================
+   ANIMATED TITLE
+   ========================================================= */
+
+.animatedTitle{
+    display:inline-block;
+    transform-origin:center bottom;
+    will-change:transform;
+    animation:titleFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes titleFloat{
+
+    0%,
+    100%{
+        transform:translateY(0) scale(1);
+    }
+
+    25%{
+        transform:translateY(-2px) scale(1.01);
+    }
+
+    50%{
+        transform:translateY(-6px) scale(1.02);
+    }
+
+    75%{
+        transform:translateY(-2px) scale(1.01);
+    }
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            var(--hero-start),
+            var(--hero-end)
+        );
+
+    color:var(--hero-text);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero:after{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border:35px solid rgba(255,255,255,.12);
+
+    border-radius:50%;
+
+    right:-70px;
+    top:-80px;
+}
+
+.hero h2{
+    font-size:32px;
+    line-height:1.1;
+    margin:0 0 8px;
+    max-width:620px;
+    position:relative;
+    z-index:1;
+    color:var(--hero-text);
+    text-shadow:none;
+    letter-spacing:-.04em;
+    font-weight:800;
+}
+
+.hero p{
+    max-width:650px;
+    font-size:1rem;
+    line-height:1.6;
+    margin:0 0 20px;
+    position:relative;
+    z-index:1;
+    color:var(--hero-text);
+    opacity:.9;
+    letter-spacing:0;
+}
+
+.heroActions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    position:relative;
+    z-index:1;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn{
+    padding:11px 17px;
+
+    border-radius:11px;
+
+    background:var(--card);
+
+    color:var(--primary);
+
+    font-weight:800;
+
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-1px);
+}
+
+.btn.primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn.blue{
+    background:var(--blue);
+    color:white;
+}
+
+
+/* =========================================================
+   GRIDS
+   ========================================================= */
+
+.grid{
+    display:grid;
+    gap:16px;
+}
+
+.stats{
+    grid-template-columns:repeat(4,1fr);
+    margin:20px 0;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:18px;
+
+    box-shadow:var(--shadow);
+
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-1px);
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stat strong{
+    font-size:27px;
+    display:block;
+}
+
+.stat span{
+    font-size:13px;
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.sectionTitle{
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    margin:26px 0 12px;
+}
+
+.sectionTitle h2{
+    margin:0;
+    font-size:20px;
+    letter-spacing:-.02em;
+    color:var(--text);
+    text-shadow:none;
+    font-weight:800;
+}
+
+.sectionTitle h2::before{
+    content:"";
+    color:var(--accent);
+    font-size:17px;
+}
+
+body.theme-halloween .sectionTitle h2::before{content:"✦"}
+body.theme-christmas .sectionTitle h2::before{content:"❄"}
+body.theme-easter .sectionTitle h2::before{content:"✿"}
+body.theme-spring .sectionTitle h2::before{content:"✿"}
+body.theme-summer .sectionTitle h2::before{content:"☀"}
+body.theme-rain .sectionTitle h2::before{content:"❖"}
+body.theme-cloudy .sectionTitle h2::before{content:"☁"}
+body.theme-winter .sectionTitle h2::before{content:"❄"}
+body.theme-thanksgiving .sectionTitle h2::before{content:"✦"}
+
+body.theme-halloween .pill::before{content:"☾"}
+body.theme-christmas .pill::before{content:"✧"}
+body.theme-easter .pill::before{content:"❀"}
+body.theme-spring .pill::before{content:"✿"}
+body.theme-summer .pill::before{content:"☀"}
+body.theme-rain .pill::before{content:"☔"}
+body.theme-cloudy .pill::before{content:"☁"}
+body.theme-winter .pill::before{content:"❄"}
+body.theme-thanksgiving .pill::before{content:"✧"}
+
+.pill::before{
+    margin-right:6px;
+    color:var(--primary);
+}
+
+
+/* =========================================================
+   GRADE GRID
+   ========================================================= */
+
+.gradeGrid{
+    grid-template-columns:repeat(6,1fr);
+}
+
+.gradePickerDialog{
+    width:min(560px,calc(100% - 32px));
+    max-height:calc(100dvh - 32px);
+    overflow:auto;
+    padding:24px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:var(--card);
+    color:var(--text);
+    box-shadow:0 24px 70px rgba(0,0,0,.24);
+}
+
+.gradePickerDialog::backdrop{
+    background:rgba(8,20,14,.48);
+    backdrop-filter:blur(3px);
+}
+
+.gradePickerDialog[open]{
+    animation:gradePickerIn .24s ease-out both;
+}
+
+.gradePickerHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    margin-bottom:20px;
+}
+
+.gradePickerHeader h2{
+    margin:0 0 4px;
+    font-size:22px;
+}
+
+.gradePickerHeader p{
+    margin:0;
+    color:var(--muted);
+}
+
+.gradePickerClose{
+    width:36px;
+    height:36px;
+    flex:0 0 36px;
+    border-radius:50%;
+    background:var(--bg);
+    color:var(--text);
+    font-size:22px;
+    line-height:1;
+}
+
+.gradePickerTrigger{
+    animation:gradeButtonIn .55s .15s both;
+}
+
+.gradePickerDialog[open] .grade{
+    animation:gradeTileIn .32s ease-out both;
+}
+
+.gradePickerDialog[open] .grade:nth-child(2){animation-delay:.025s}
+.gradePickerDialog[open] .grade:nth-child(3){animation-delay:.05s}
+.gradePickerDialog[open] .grade:nth-child(4){animation-delay:.075s}
+.gradePickerDialog[open] .grade:nth-child(5){animation-delay:.1s}
+.gradePickerDialog[open] .grade:nth-child(6){animation-delay:.125s}
+
+@keyframes gradePickerIn{
+    from{opacity:0;transform:translateY(12px) scale(.98)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@keyframes gradeButtonIn{
+    from{opacity:0;transform:translateY(8px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes gradeTileIn{
+    from{opacity:0;transform:translateY(7px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .gradePickerTrigger,
+    .gradePickerDialog[open],
+    .gradePickerDialog[open] .grade,
+    .logo::after{
+        animation:none;
+    }
+}
+
+.seasonPickerDialog{
+    width:min(660px,calc(100% - 32px));
+    max-height:calc(100dvh - 32px);
+    overflow:auto;
+    padding:24px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:var(--card);
+    color:var(--text);
+    box-shadow:0 24px 70px rgba(0,0,0,.28);
+}
+
+.seasonPickerDialog::backdrop{
+    background:rgba(8,20,14,.58);
+    backdrop-filter:blur(5px);
+}
+
+.seasonPickerDialog[open]{
+    animation:gradePickerIn .26s ease-out both;
+}
+
+.seasonPickerHeader{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:20px;
+}
+
+.seasonPickerHeader h2{
+    margin:0;
+    font-size:24px;
+}
+
+.seasonPickerHeader p{
+    margin:5px 0 0;
+    color:var(--muted);
+}
+
+.seasonThemeGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+
+.seasonThemeOption{
+    position:relative;
+    min-height:126px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px;
+    overflow:hidden;
+    border:1px solid transparent;
+    border-radius:14px;
+    color:#243047;
+    text-align:left;
+    transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+
+.seasonThemeOption:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(18,35,26,.16);
+}
+
+.seasonThemeOption:focus-visible{
+    outline:3px solid var(--primary);
+    outline-offset:3px;
+}
+
+.seasonThemeOption[aria-pressed="true"]{
+    border-color:var(--primary);
+    box-shadow:0 0 0 2px var(--primary),0 12px 24px rgba(18,35,26,.16);
+}
+
+.seasonThemeOption[aria-pressed="true"]::after{
+    content:"✓";
+    position:absolute;
+    top:10px;
+    right:12px;
+    width:24px;
+    height:24px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.92);
+    color:#183d2c;
+    font-weight:900;
+}
+
+.seasonThemeOption[data-theme-choice="auto"]{
+    grid-column:1/-1;
+    background:linear-gradient(115deg,#e8f2ff,#fff0d9 52%,#e8f4e6);
+}
+
+.seasonThemeOption[data-theme-choice="classic"]{
+    background:linear-gradient(135deg,#eef2f7,#fff 72%);
+    color:#253247;
+}
+
+.seasonThemeOption[data-theme-choice="halloween"]{
+    background:linear-gradient(135deg,#392129,#a94721);
+    color:#fff7ed;
+}
+
+.seasonThemeOption[data-theme-choice="christmas"]{
+    background:linear-gradient(135deg,#14523d,#a32e3c);
+    color:#fffdf4;
+}
+
+.seasonThemeOption[data-theme-choice="easter"]{
+    background:linear-gradient(135deg,#e8f3df,#fff0c8);
+    color:#2c4434;
+}
+
+.seasonThemeOption[data-theme-choice="spring"]{
+    background:linear-gradient(135deg,#dafbe7,#86efac 52%,#16a34a);
+    color:#123620;
+}
+
+.seasonThemeOption[data-theme-choice="summer"]{
+    background:linear-gradient(135deg,#fff4c2,#fbbf24 52%,#f97316);
+    color:#3b2a13;
+}
+
+.seasonThemeOption[data-theme-choice="rain"]{
+    background:linear-gradient(135deg,#dbeafe,#7dd3fc 54%,#1d4ed8);
+    color:#0f1e36;
+}
+
+.seasonThemeOption[data-theme-choice="cloudy"]{
+    background:linear-gradient(135deg,#e2e8f0,#94a3b8 52%,#475569);
+    color:#0f172a;
+}
+
+.seasonThemeOption[data-theme-choice="winter"]{
+    background:linear-gradient(135deg,#dfe7ff,#93c5fd 52%,#3b82f6);
+    color:#10213d;
+}
+
+.seasonThemeOption[data-theme-choice="thanksgiving"]{
+    background:linear-gradient(135deg,#f7d8b7,#d97706 50%,#7c3f17);
+    color:#fffaf3;
+}
+
+.seasonThemeIcon{
+    width:62px;
+    height:62px;
+    flex:0 0 62px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:16px;
+    background:rgba(255,255,255,.16);
+    font-size:34px;
+}
+
+.seasonThemeCopy{
+    display:grid;
+    gap:6px;
+    min-width:0;
+}
+
+.seasonThemeCopy b{
+    font-size:16px;
+}
+
+.seasonThemeCopy small{
+    font-size:12px;
+    line-height:1.4;
+    opacity:.82;
+}
+
+body.theme-halloween .hero::before,
+body.theme-christmas .hero::before,
+body.theme-easter .hero::before,
+body.theme-spring .hero::before,
+body.theme-summer .hero::before,
+body.theme-rain .hero::before,
+body.theme-cloudy .hero::before,
+body.theme-winter .hero::before,
+body.theme-thanksgiving .hero::before{
+    position:absolute;
+    right:190px;
+    top:54px;
+    z-index:0;
+    font-size:36px;
+    opacity:.72;
+    animation:seasonalTwinkle 3s ease-in-out infinite;
+}
+
+body.theme-halloween .hero::before{content:"✦";color:#f5b642}
+body.theme-christmas .hero::before{content:"❄";color:#fffdf4}
+body.theme-easter .hero::before{content:"✿";color:#f3d06f}
+body.theme-spring .hero::before{content:"✿";color:#e0fce3}
+body.theme-summer .hero::before{content:"☀";color:#fff7d6}
+body.theme-rain .hero::before{content:"☔";color:#d6f4ff}
+body.theme-cloudy .hero::before{content:"☁";color:#f8fafc}
+body.theme-winter .hero::before{content:"❄";color:#f2f7ff}
+body.theme-thanksgiving .hero::before{content:"✦";color:#f8d79a}
+
+@media(max-width:520px){
+    .seasonPickerDialog{
+        padding:18px;
+    }
+
+    .seasonThemeGrid{
+        grid-template-columns:1fr;
+    }
+
+    .seasonThemeOption[data-theme-choice="auto"]{
+        grid-column:auto;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .seasonPickerDialog[open],
+    .seasonThemeOption,
+    body.theme-halloween .hero::before,
+    body.theme-christmas .hero::before,
+    body.theme-easter .hero::before{
+        animation:none;
+        transition:none;
+    }
+}
+
+.grade{
+    padding:17px 8px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    transition:.2s;
+}
+
+.grade:hover,
+.grade.selected{
+    transform:translateY(-2px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 8px 20px
+        rgba(var(--primary-rgb),.13);
+}
+
+.grade b{
+    display:block;
+
+    font-size:20px;
+
+    color:var(--primary);
+}
+
+.grade small{
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   SUBJECT GRID
+   ========================================================= */
+
+.subjectGrid{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.subjectPickerDialog{
+    width:min(760px,calc(100% - 32px));
+}
+
+.subjectSeasonDecor{
+    display:none;
+    position:relative;
+    height:30px;
+    margin:-12px 0 8px;
+    pointer-events:none;
+}
+
+body.theme-halloween .subjectSeasonDecor,
+body.theme-christmas .subjectSeasonDecor,
+body.theme-easter .subjectSeasonDecor{
+    display:block;
+}
+
+body.theme-halloween .subjectSeasonDecor::before,
+body.theme-halloween .subjectSeasonDecor::after{
+    position:absolute;
+    top:0;
+    content:"🕸️";
+    font-size:23px;
+    line-height:1;
+    opacity:.82;
+}
+
+body.theme-halloween .subjectSeasonDecor::before{left:2px}
+body.theme-halloween .subjectSeasonDecor::after{right:2px;transform:scaleX(-1)}
+
+body.theme-christmas .subjectSeasonDecor{
+    background-image:
+        linear-gradient(#537950,#537950),
+        radial-gradient(circle at 10px 9px,#ef5b55 0 4px,transparent 4.8px),
+        radial-gradient(circle at 46px 9px,#f3c84b 0 4px,transparent 4.8px),
+        radial-gradient(circle at 82px 9px,#58a9df 0 4px,transparent 4.8px),
+        radial-gradient(circle at 118px 9px,#f3c84b 0 4px,transparent 4.8px),
+        radial-gradient(circle at 154px 9px,#ef5b55 0 4px,transparent 4.8px);
+    background-size:100% 2px,180px 20px,180px 20px,180px 20px,180px 20px,180px 20px;
+    background-position:center 9px,0 0,0 0,0 0,0 0,0 0;
+    background-repeat:no-repeat,repeat-x,repeat-x,repeat-x,repeat-x,repeat-x;
+}
+
+body.theme-easter .subjectSeasonDecor::before,
+body.theme-easter .subjectSeasonDecor::after{
+    position:absolute;
+    top:0;
+    font-size:21px;
+    line-height:1;
+    white-space:pre;
+}
+
+body.theme-easter .subjectSeasonDecor::before{left:2px;content:"🌷  🥚"}
+body.theme-easter .subjectSeasonDecor::after{right:2px;content:"🥚  🌼"}
+
+.subjectPickerDialog .subjectGrid{
+    max-height:min(60vh,520px);
+    overflow:auto;
+    padding:2px;
+}
+
+.subject{
+    min-height:130px;
+}
+
+.subject .icon{
+    font-size:30px;
+}
+
+.subject h3{
+    margin:10px 0 5px;
+}
+
+.subject p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin:0;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+   ========================================================= */
+
+.seasonPageBanner{
+    position:relative;
+    min-height:150px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    margin:0 0 20px;
+    padding:24px 32px;
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:18px;
+    background:linear-gradient(120deg,var(--hero-start),var(--hero-end));
+    color:var(--hero-text);
+    box-shadow:var(--shadow);
+}
+
+.seasonPageBanner::after{
+    position:absolute;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%) rotate(7deg);
+    font-size:76px;
+    line-height:1;
+    opacity:.8;
+    animation:seasonalTwinkle 3s ease-in-out infinite;
+}
+
+.seasonPageCopy{
+    position:relative;
+    z-index:1;
+    max-width:70%;
+}
+
+.seasonPageEyebrow{
+    display:block;
+    margin-bottom:7px;
+    font-size:11px;
+    font-weight:800;
+    opacity:.78;
+}
+
+.seasonPageCopy h2{
+    margin:0 0 6px;
+    font-size:24px;
+}
+
+.seasonPageCopy p{
+    margin:0;
+    font-size:14px;
+    line-height:1.5;
+    opacity:.9;
+}
+
+.seasonPageIcon{
+    position:absolute;
+    right:38px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:66px;
+    line-height:1;
+}
+
+body.theme-halloween .seasonPageBanner::after{content:"🎃"}
+body.theme-christmas .seasonPageBanner::after{content:"🎄"}
+body.theme-easter .seasonPageBanner::after{content:"🐣"}
+
+body.theme-halloween .seasonPageIcon,
+body.theme-christmas .seasonPageIcon,
+body.theme-easter .seasonPageIcon{
+    opacity:.18;
+}
+
+.page:not(#home) > .card,
+.page:not(#home) .quizWrap > .card{
+    border-top:3px solid var(--primary);
+}
+
+@media(max-width:600px){
+    .seasonPageBanner{
+        min-height:132px;
+        padding:20px;
+    }
+
+    .seasonPageCopy{
+        max-width:75%;
+    }
+
+    .seasonPageCopy h2{
+        font-size:21px;
+    }
+
+    .seasonPageIcon{
+        right:18px;
+        font-size:48px;
+    }
+
+    .seasonPageBanner::after{
+        right:12px;
+        font-size:58px;
+    }
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.controls{
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+.quizCount{
+    align-self:center;
+    color:var(--muted);
+    font-size:13px;
+    font-weight:700;
+}
+
+select,
+input{
+    padding:11px 13px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    color:var(--text);
+
+    outline:none;
+}
+
+
+/* =========================================================
+   CURRICULUM
+   ========================================================= */
+
+.curriculumHeader{
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:18px;
+}
+
+.curriculumActions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.curriculumUnitDialog{
+    width:min(980px,calc(100% - 32px));
+}
+
+.curriculumUnitDialog .unitGrid{
+    max-height:min(62dvh,620px);
+    margin-top:0;
+    overflow:auto;
+    padding:2px;
+}
+
+.curriculumNotesDialog{
+    width:min(680px,calc(100% - 32px));
+    padding:18px;
+}
+
+.curriculumNotesDialog .gradePickerHeader{
+    margin-bottom:10px;
+}
+
+.curriculumNotesDialog .lessonBox{
+    margin-top:0;
+}
+
+.curriculumNotesDialog .lessonBox h2{
+    margin:0 0 6px;
+    font-size:20px;
+}
+
+.curriculumNotesDialog .lessonBox h3{
+    margin:10px 0 4px;
+    font-size:15px;
+}
+
+.curriculumNotesDialog .lessonBox p{
+    margin:5px 0;
+}
+
+.curriculumNotesDialog .lessonBox .lesson{
+    line-height:1.45;
+}
+
+.curriculumNotesDialog .lessonBox hr{
+    margin:10px 0 !important;
+}
+
+.curriculumNotesDialog .lessonBox > button{
+    margin-top:8px;
+}
+
+.unitCompleteButton.is-complete{
+    cursor:default;
+    opacity:.88;
+}
+
+.unitCompletionStatus{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-top:12px;
+    padding:11px 13px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--card);
+    color:var(--primary);
+    font-size:14px;
+    font-weight:700;
+}
+
+.unitCompletionStatus[hidden]{
+    display:none;
+}
+
+@media(max-height:640px) and (max-width:420px){
+    .curriculumNotesDialog{
+        padding:10px;
+    }
+
+    .curriculumNotesDialog .gradePickerHeader{
+        gap:8px;
+        margin-bottom:5px;
+    }
+
+    .curriculumNotesDialog .gradePickerHeader h2{
+        font-size:18px;
+    }
+
+    .curriculumNotesDialog .gradePickerHeader p{
+        font-size:12px;
+    }
+
+    .curriculumNotesDialog .lessonBox h2{
+        margin-bottom:4px;
+        font-size:18px;
+    }
+
+    .curriculumNotesDialog .lessonBox h3{
+        margin:6px 0 2px;
+        font-size:14px;
+    }
+
+    .curriculumNotesDialog .lessonBox p{
+        margin:3px 0;
+        font-size:13px;
+        line-height:1.3;
+    }
+
+    .curriculumNotesDialog .lessonBox hr{
+        margin:6px 0 !important;
+    }
+
+    .curriculumNotesDialog .lessonBox > button{
+        margin-top:4px;
+        padding:8px 12px;
+    }
+}
+
+.curriculumHeader h2{
+    margin:0 0 5px;
+}
+
+.curriculumHeader p{
+    margin:0;
+
+    color:var(--muted);
+}
+
+.curriculumSubjects{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:12px;
+}
+
+.curriculumSubject{
+    min-width:0;
+    min-height:94px;
+    display:grid;
+    grid-template-columns:38px minmax(0,1fr) 18px;
+    align-items:center;
+    gap:10px;
+    padding:13px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:var(--card);
+    color:var(--text);
+    text-align:left;
+    animation:subjectReveal .42s both;
+    animation-delay:calc(var(--subject-index) * 45ms);
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;
+}
+
+.curriculumSubject:hover{
+    transform:translateY(-3px);
+    border-color:var(--primary);
+    box-shadow:0 9px 20px rgba(var(--primary-rgb),.12);
+}
+
+.curriculumSubject:focus-visible{
+    outline:3px solid rgba(var(--primary-rgb),.35);
+    outline-offset:2px;
+}
+
+.curriculumSubject.is-selected{
+    border-color:var(--primary);
+    background:linear-gradient(135deg,rgba(var(--primary-rgb),.10),var(--card) 72%);
+    box-shadow:0 6px 18px rgba(var(--primary-rgb),.10);
+}
+
+.curriculumSubjectIcon{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:11px;
+    background:rgba(var(--primary-rgb),.11);
+    color:var(--primary);
+    font-size:20px;
+    font-weight:800;
+    transition:transform .25s ease,background .25s ease,color .25s ease;
+}
+
+.curriculumSubject.is-selected .curriculumSubjectIcon{
+    transform:rotate(-7deg) scale(1.08);
+    background:var(--primary);
+    color:#fff;
+}
+
+.curriculumSubjectCopy{
+    min-width:0;
+}
+
+.curriculumSubjectCopy strong,
+.curriculumSubjectCopy small{
+    display:block;
+}
+
+.curriculumSubjectCopy strong{
+    font-size:14px;
+    line-height:1.25;
+}
+
+.curriculumSubjectCopy small{
+    margin-top:4px;
+    overflow:hidden;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.35;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    line-clamp:2;
+    -webkit-line-clamp:2;
+}
+
+.curriculumSubjectCheck{
+    display:grid;
+    width:18px;
+    height:18px;
+    place-items:center;
+    border:1px solid var(--border);
+    border-radius:50%;
+    color:transparent;
+    font-size:11px;
+    transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+}
+
+.curriculumSubject.is-selected .curriculumSubjectCheck{
+    transform:scale(1.08);
+    border-color:var(--primary);
+    background:var(--primary);
+    color:#fff;
+}
+
+@keyframes subjectReveal{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.unitGrid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:18px;
+}
+
+@media(prefers-reduced-motion:reduce){
+    .curriculumSubject,
+    .curriculumSubjectIcon,
+    .curriculumSubjectCheck,
+    .unitCard{
+        animation:none;
+        transition:none;
+    }
+}
+
+.unitCard{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    padding:17px;
+
+    cursor:pointer;
+
+    transition:.2s;
+    animation:unitReveal .38s both;
+    animation-delay:calc(var(--unit-index) * 32ms);
+}
+
+@keyframes unitReveal{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.unitCard:hover{
+    transform:translateY(-3px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 10px 25px
+        rgba(var(--primary-rgb),.12);
+}
+
+.unitNumber{
+    display:inline-block;
+
+    background:
+        rgba(var(--primary-rgb),.12);
+
+    color:var(--primary);
+
+    padding:5px 9px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+.unitCard h3{
+    margin:12px 0 7px;
+}
+
+.unitCard p{
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+.unitStatus{
+    margin-top:13px;
+
+    font-size:12px;
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+.lessonBox{
+    margin-top:18px;
+}
+
+.lesson{
+    line-height:1.75;
+    color:var(--muted);
+}
+
+.lesson h3{
+    color:var(--text);
+}
+
+
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
+.quizWrap{
+    max-width:850px;
+    margin:auto;
+}
+
+.quizQuestion{
+    font-size:22px;
+
+    font-weight:800;
+
+    line-height:1.4;
+
+    margin:18px 0;
+}
+
+.options{
+    display:grid;
+    gap:10px;
+}
+
+.option{
+    padding:14px;
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
+    color:var(--text);
+
+    border-radius:12px;
+
+    text-align:left;
+
+    transition:.2s;
+}
+
+.option:hover{
+    border-color:var(--blue);
+}
+
+.option.correct{
+    border-color:#24a148;
+
+    background:
+        rgba(36,161,72,.12);
+}
+
+.option.wrong{
+    border-color:#e5484d;
+
+    background:
+        rgba(229,72,77,.12);
+}
+
+.progress{
+    height:9px;
+
+    background:var(--border);
+
+    border-radius:99px;
+
+    overflow:hidden;
+}
+
+.progress div{
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--accent)
+        );
+
+    transition:.3s;
+}
+
+
+/* =========================================================
+   CHAT
+   ========================================================= */
+
+.chat{
+    height:570px;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.messages{
+    flex:1;
+
+    overflow:auto;
+
+    padding:10px;
+}
+
+.msg{
+    max-width:78%;
+
+    padding:12px 15px;
+
+    border-radius:15px;
+
+    margin:8px 0;
+
+    line-height:1.5;
+
+    white-space:pre-wrap;
+}
+
+.msg.bot{
+    background:var(--bg);
+}
+
+.msg.user{
+    background:var(--blue);
+
+    color:white;
+
+    margin-left:auto;
+}
+
+.chatInput{
+    display:flex;
+
+    gap:8px;
+
+    border-top:1px solid var(--border);
+
+    padding-top:12px;
+}
+
+.chatInput input{
+    flex:1;
+}
+
+.assistantIntro{
+    min-height:430px;
+    display:grid;
+    grid-template-columns:minmax(220px,.8fr) minmax(280px,1.2fr);
+    align-items:center;
+    gap:32px;
+    padding:36px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 30%,rgba(255,255,255,.78),transparent 38%),
+        linear-gradient(135deg,#e7f8ec,#e9f3ff 58%,#fff4df);
+}
+
+.assistantIntroCopy h3{
+    margin:8px 0 10px;
+    font-size:30px;
+}
+
+.assistantIntroCopy p{
+    max-width:440px;
+    color:var(--muted);
+    line-height:1.65;
+}
+
+.assistantStatus{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#287348;
+    font-size:13px;
+    font-weight:700;
+}
+
+.assistantStatus::before{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#30b96b;
+    content:"";
+    box-shadow:0 0 0 4px rgba(48,185,107,.12);
+}
+
+.assistantFace{
+    --face-size:190px;
+    position:relative;
+    display:grid;
+    place-items:center;
+    width:var(--face-size);
+    height:var(--face-size);
+    margin:auto;
+    border:8px solid rgba(255,255,255,.88);
+    border-radius:42% 45% 43% 47%;
+    background:linear-gradient(145deg,#ffd56a,#ff9c5c);
+    box-shadow:0 24px 55px rgba(83,100,95,.2),inset -12px -14px 0 rgba(201,102,52,.12);
+    animation:companionFloat 3.8s ease-in-out infinite;
+}
+
+.assistantFace::before,.assistantFace::after{
+    position:absolute;
+    top:34%;
+    width:13%;
+    height:17%;
+    border-radius:50%;
+    background:#24364a;
+    content:"";
+    animation:companionBlink 5s infinite;
+}
+
+.assistantFace::before{left:25%}
+.assistantFace::after{right:25%}
+
+.assistantMouth{
+    position:absolute;
+    top:59%;
+    left:50%;
+    width:28%;
+    height:13%;
+    border-bottom:5px solid #9d4e45;
+    border-radius:0 0 50% 50%;
+    transform:translateX(-50%);
+    transition:.2s ease;
+}
+
+.assistantFace.expression-thinking::before,.assistantFace.expression-thinking::after{
+    height:5%;
+    border-radius:8px;
+}
+
+.assistantFace.expression-thinking .assistantMouth{
+    top:62%;
+    width:16%;
+    height:2%;
+    border:0;
+    border-radius:50%;
+    background:#9d4e45;
+}
+
+.assistantFace.expression-listening::before,.assistantFace.expression-listening::after{
+    width:16%;
+    height:20%;
+}
+
+.assistantFace.expression-listening .assistantMouth,
+.assistantFace.expression-speaking .assistantMouth{
+    top:58%;
+    width:18%;
+    height:15%;
+    border:0;
+    border-radius:50%;
+    background:#9d4e45;
+}
+
+.assistantFace.expression-happy .assistantMouth{
+    height:18%;
+    border-bottom-width:7px;
+}
+
+.assistantFace.expression-speaking .assistantMouth{
+    animation:companionTalk .24s ease-in-out infinite alternate;
+}
+
+.companionDock{
+    position:fixed;
+    right:24px;
+    bottom:22px;
+    z-index:1000;
+}
+
+.companionLauncher{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    padding:8px 16px 8px 8px;
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:999px;
+    color:#203248;
+    background:#fff;
+    box-shadow:0 12px 34px rgba(25,48,64,.2);
+    cursor:pointer;
+    font:700 14px var(--body-font);
+}
+
+.companionLauncher .assistantFace{
+    --face-size:48px;
+    flex:none;
+    border-width:3px;
+    box-shadow:0 3px 10px rgba(83,100,95,.15);
+}
+
+.companionLauncher .assistantFace::before,.companionLauncher .assistantFace::after{
+    animation:none;
+}
+
+.companionLauncher .assistantMouth{
+    border-bottom-width:2px;
+}
+
+.companionOnline{
+    display:block;
+    margin-top:3px;
+    color:#388153;
+    font-size:11px;
+    font-weight:500;
+}
+
+.companionPanel{
+    position:absolute;
+    right:0;
+    bottom:72px;
+    display:none;
+    flex-direction:column;
+    width:min(390px,calc(100vw - 28px));
+    height:min(590px,calc(100dvh - 115px));
+    overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:18px;
+    color:var(--text);
+    background:var(--card);
+    box-shadow:0 24px 70px rgba(22,37,55,.26);
+}
+
+.companionPanel.open{display:flex;animation:companionPanelIn .2s ease-out}
+
+.companionHeader{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 16px;
+    border-bottom:1px solid var(--border);
+}
+
+.companionHeader .assistantFace{
+    --face-size:48px;
+    flex:none;
+    border-width:3px;
+    box-shadow:0 4px 12px rgba(83,100,95,.16);
+}
+
+.companionHeaderCopy{flex:1;min-width:0}
+.companionHeaderCopy strong{display:block;font-size:14px}
+.companionHeaderCopy small{color:var(--muted)}
+
+.companionIconButton{
+    display:grid;
+    place-items:center;
+    width:36px;
+    height:36px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    color:var(--text);
+    background:var(--bg);
+    cursor:pointer;
+    font-size:17px;
+}
+
+.companionMessages{
+    flex:1;
+    overflow:auto;
+    padding:14px;
+    overscroll-behavior:contain;
+}
+
+.companionMessages .msg{max-width:88%;font-size:14px}
+.companionMessages .msg.bot{background:var(--bg)}
+.companionMessages .msg.typing{color:var(--muted);font-style:italic}
+
+.companionComposer{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:10px;
+    border-top:1px solid var(--border);
+}
+
+.companionComposer input{
+    flex:1;
+    min-width:0;
+    height:42px;
+    padding:0 12px;
+}
+
+.companionComposer .btn{height:42px;padding:0 14px}
+.companionTools{display:flex;gap:6px;padding:0 10px 10px}
+.companionTools .companionIconButton{width:32px;height:32px;font-size:15px}
+.companionTools .voiceReplies{width:auto;padding:0 10px;font-size:12px}
+.companionTools .voiceReplies[aria-pressed="true"]{border-color:#36a86c;color:#237344;background:#e9f8ef}
+
+@keyframes companionFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes companionBlink{0%,45%,48%,100%{transform:scaleY(1)}46%,47%{transform:scaleY(.12)}}
+@keyframes companionTalk{from{transform:translateX(-50%) scaleY(.55)}to{transform:translateX(-50%) scaleY(1.15)}}
+@keyframes companionPanelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:700px){
+    .assistantIntro{grid-template-columns:1fr;gap:18px;padding:24px;}
+    .assistantFace{--face-size:150px;}
+    .assistantIntroCopy h3{font-size:25px;}
+    .companionDock{right:14px;bottom:14px;}
+    .companionPanel{right:-2px;bottom:66px;height:min(560px,calc(100dvh - 95px));}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .assistantFace,.assistantFace::before,.assistantFace::after,.assistantFace.expression-speaking .assistantMouth{animation:none;}
+    .companionPanel.open{animation:none;}
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table{
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+.table th,
+.table td{
+    padding:12px;
+
+    text-align:left;
+
+    border-bottom:1px solid var(--border);
+}
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+.muted{
+    color:var(--muted);
+}
+
+.mobileMenu{
+    display:none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1100px){
+
+    .unitGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .curriculumSubjects{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .gradeGrid{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .subjectGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:700px){
+
+    .sidebar{
+        transform:translateX(-100%);
+        transition:.25s;
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main{
+        margin:0;
+
+        width:100%;
+
+        padding:16px;
+    }
+
+    .mobileMenu{
+        display:block;
+
+        padding:9px 12px;
+
+        background:var(--card);
+
+        border:1px solid var(--border);
+
+        border-radius:10px;
+
+        color:var(--text);
+    }
+
+    .hero{
+        padding:23px;
+    }
+
+    .hero h2{
+        font-size:25px;
+        line-height:1.1;
+        letter-spacing:-.04em;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .gradeGrid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .subjectGrid{
+        grid-template-columns:1fr;
+    }
+
+    .curriculumSubject{
+        min-height:76px;
+        padding:10px;
+    }
+
+    .curriculumSubjectCopy small{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .unitGrid{
+        grid-template-columns:1fr;
+    }
+
+    .topbar h1{
+        font-size:21px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<script>
+window.getSeasonalTheme = function(date = new Date()){
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    const a = year % 19;
+    const b = Math.floor(year / 100);
+    const c = year % 100;
+    const d = Math.floor(b / 4);
+    const e = b % 4;
+    const f = Math.floor((b + 8) / 25);
+    const g = Math.floor((b - f + 1) / 3);
+    const h = (19 * a + b - d - g + 15) % 30;
+    const i = Math.floor(c / 4);
+    const k = c % 4;
+    const l = (32 + 2 * e + 2 * i - h - k) % 7;
+    const m = Math.floor((a + 11 * h + 22 * l) / 451);
+    const easterMonth = Math.floor((h + l - 7 * m + 114) / 31) - 1;
+    const easterDay = ((h + l - 7 * m + 114) % 31) + 1;
+    const easter = new Date(year, easterMonth, easterDay);
+    const today = new Date(year, month, date.getDate());
+    const daysFromEaster = Math.round((today - easter) / 86400000);
+
+    const comboSet = new Set();
+
+    if(month === 9){
+        comboSet.add("halloween");
+        comboSet.add("cloudy");
+    }
+
+    if(month === 10){
+        comboSet.add("thanksgiving");
+        comboSet.add("rain");
+    }
+
+    if(month === 11 || month === 0 || month === 1){
+        comboSet.add("winter");
+        comboSet.add("cloudy");
+    }
+
+    if(month === 2 || month === 3){
+        comboSet.add("spring");
+        comboSet.add("rain");
+    }
+
+    if(month === 4 || month === 5 || month === 6 || month === 7){
+        comboSet.add("summer");
+        comboSet.add("rain");
+    }
+
+    if(month === 8){
+        comboSet.add("cloudy");
+        comboSet.add("summer");
+    }
+
+    if(month === 11 || month === 12){
+        comboSet.add("christmas");
+    }
+
+    if(daysFromEaster >= -7 && daysFromEaster <= 1){
+        comboSet.add("easter");
+        comboSet.add("spring");
+    }
+
+    if(comboSet.size === 0){
+        return "classic";
+    }
+
+    return Array.from(comboSet).join("+");
+};
+
+const validSeasonThemes = [
+    "auto",
+    "classic",
+    "halloween",
+    "christmas",
+    "easter",
+    "spring",
+    "summer",
+    "rain",
+    "cloudy",
+    "winter",
+    "thanksgiving"
+];
+const savedSeasonTheme = localStorage.getItem("er_theme");
+const initialSeasonChoice = validSeasonThemes.includes(savedSeasonTheme)
+    ? savedSeasonTheme
+    : "auto";
+const initialSeasonTheme = initialSeasonChoice === "auto"
+    ? window.getSeasonalTheme()
+    : initialSeasonChoice;
+
+if(initialSeasonTheme !== "classic"){
+    document.body.classList.add(`theme-${initialSeasonTheme}`);
+}
+
+if(localStorage.getItem("er_dark") === "true"){
+    document.body.classList.add("dark");
+}
+</script>
+
+<div class="introLoader" id="introLoader" role="status" aria-label="Loading Ecole Ronsard Hub">
+    <div class="introWordmark" aria-hidden="true">
+        <span class="introMark" data-scramble="ER">ER</span>
+        <span class="introName" data-scramble="Ronsard">Ronsard</span>
+        <span class="introHub" data-scramble="Hub">Hub</span>
+    </div>
+</div>
+
+<script>
+(() => {
+    const loader = document.getElementById("introLoader");
+    const parts = loader.querySelectorAll("[data-scramble]");
+    const letters = [];
+    const startedAt = Date.now();
+    const settleAfter = 7500;
+    const totalDuration = 10000;
+    let settling = false;
+
+    parts.forEach(part => {
+        const finalText = part.dataset.scramble;
+        part.textContent = "";
+
+        Array.from(finalText).forEach(character => {
+            const letter = document.createElement("span");
+            letter.className = "loaderChar";
+            letter.textContent = character;
+            part.appendChild(letter);
+            letters.push(letter);
+        });
+    });
+
+    const jumpLetters = () => {
+        letters.forEach(letter => {
+            const offsetX = Math.round(Math.random() * 40 - 20);
+            const offsetY = Math.round(Math.random() * 100 - 50);
+            const rotation = Math.round(Math.random() * 120 - 60);
+            letter.style.transitionDelay = "0ms";
+            letter.style.transform =
+                `translate(${offsetX}px,${offsetY}px) rotate(${rotation}deg)`;
+        });
+    };
+
+    jumpLetters();
+
+    const motionTimer = window.setInterval(() => {
+        const elapsed = Date.now() - startedAt;
+
+        if(elapsed >= totalDuration){
+            window.clearInterval(motionTimer);
+            loader.classList.add("isDone");
+            return;
+        }
+
+        if(elapsed >= settleAfter){
+            if(!settling){
+                settling = true;
+
+                letters.forEach((letter, index) => {
+                    letter.style.transitionDelay =
+                        `${index * ((totalDuration - settleAfter) / letters.length)}ms`;
+                    letter.style.transform = "translate(0,0) rotate(0deg)";
+                });
+            }
+
+            return;
+        }
+
+        jumpLetters();
+    }, 280);
+})();
+</script>
+
+<div class="app">
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <span class="logoMark">ER</span>
+
+            <span class="logoName">
+               𝕽𝖔𝖓𝖘𝖆𝖗𝖉
+            </span>
+
+            <span class="logoHub">
+                Hub
+            </span>
+
+        </div>
+
+
+        <div class="nav">
+
+            <button class="active" data-page="home">
+                ⌂ &nbsp; Dashboard
+            </button>
+
+            <button data-page="learn">
+                📚 &nbsp; Curriculum
+            </button>
+
+            <button data-page="quiz">
+                🧠 &nbsp; Quizzes
+            </button>
+
+            <button data-page="assistant">
+                💬 &nbsp; Study GPT
+            </button>
+
+            <button data-page="progress">
+                📊 &nbsp; Progress
+            </button>
+
+            <button data-page="about">
+                ℹ️ &nbsp; About
+            </button>
+
+        </div>
+
+
+        <div class="sideBottom">
+
+            <div class="themeControls">
+                <label for="seasonTheme">Seasonal design</label>
+                <button
+                    class="seasonTrigger"
+                    id="seasonThemeTrigger"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-controls="seasonPicker"
+                >
+                    <span class="seasonTriggerIcon" id="seasonThemeIcon" aria-hidden="true">🎃</span>
+                    <span class="seasonTriggerCopy">
+                        <span class="seasonTriggerTitle">Choose a look</span>
+                        <span class="seasonTriggerCurrent" id="seasonThemeCurrent">Auto • Halloween</span>
+                    </span>
+                    <span class="seasonTriggerChevron" aria-hidden="true">⌄</span>
+                </button>
+            </div>
+
+            <button class="themeBtn" id="themeBtn">
+                ☾ Dark mode
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <div style="display:flex;align-items:center;gap:10px">
+
+                <button
+                    class="mobileMenu"
+                    id="mobileMenu"
+                >
+                    ☰
+                </button>
+
+                <h1
+                    id="pageTitle"
+                    class="animatedTitle"
+                >
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="pill">
+
+                Cambridge Curriculum •
+                <b id="gradePill">
+                    Grade 7
+                </b>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             HOME
+             ================================================= -->
+
+        <section
+            class="page active"
+            id="home"
+        >
+
+            <div class="hero">
+
+                <h2>
+                    Learn smarter with EcoleRonsardHub.
+                </h2>
+
+                <p>
+                 Ronsard Hub were fun crosses with learning.
+                </p>
+
+                <div class="heroActions">
+                    <button
+                        class="btn gradePickerTrigger"
+                        type="button"
+                        aria-haspopup="dialog"
+                        aria-controls="gradePicker"
+                        onclick="document.getElementById('gradePicker').showModal()"
+                    >
+                        Choose your grade
+                    </button>
+
+                    <button
+                        class="btn"
+                        onclick="showPage('learn')"
+                    >
+                        Explore curriculum →
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="grid stats">
+
+                <div class="card stat">
+
+                    <strong id="statGrade">
+                        7
+                    </strong>
+
+                    <span>
+                        Current Grade
+                    </span>
+
+                </div>
+
+
+                <div class="card stat">
+
+                    <strong id="statScore">
+                        —
+                    </strong>
+
+                    <span>
+                        Quiz Average
+                    </span>
+
+                </div>
+
+
+                <div class="card stat">
+
+                    <strong id="statQuizzes">
+                        0
+                    </strong>
+
+                    <span>
+                        Quizzes Completed
+                    </span>
+
+                </div>
+
+
+                <div class="card stat">
+
+                    <strong>
+                        12
+                    </strong>
+
+                    <span>
+                        Grades Available
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="sectionTitle">
+                <button
+                    class="btn primary"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-controls="coreSubjectsDialog"
+                    onclick="document.getElementById('coreSubjectsDialog').showModal()"
+                >
+                    Browse subjects
+                </button>
+
+            </div>
+
+        </section>
+
+        <dialog class="gradePickerDialog subjectPickerDialog" id="coreSubjectsDialog" aria-labelledby="coreSubjectsTitle">
+            <div class="subjectSeasonDecor" aria-hidden="true"></div>
+            <div class="gradePickerHeader">
+                <div>
+                    <h2 id="coreSubjectsTitle">Core subjects</h2>
+                    <p>Choose a subject to explore in the curriculum.</p>
+                </div>
+                <button
+                    class="gradePickerClose"
+                    type="button"
+                    aria-label="Close core subjects"
+                    onclick="document.getElementById('coreSubjectsDialog').close()"
+                >
+                    &times;
+                </button>
+            </div>
+            <div class="grid subjectGrid" id="subjectGrid"></div>
+        </dialog>
+
+        <dialog class="gradePickerDialog" id="gradePicker" aria-labelledby="gradePickerTitle">
+            <div class="gradePickerHeader">
+                <div>
+                    <h2 id="gradePickerTitle">Choose your grade</h2>
+                    <p>Choose from Grade 1 to Grade 12.</p>
+                </div>
+                <button
+                    class="gradePickerClose"
+                    type="button"
+                    aria-label="Close grade selection"
+                    onclick="document.getElementById('gradePicker').close()"
+                >
+                    &times;
+                </button>
+            </div>
+            <div class="grid gradeGrid" id="gradeGrid"></div>
+        </dialog>
+
+        <dialog class="seasonPickerDialog" id="seasonPicker" aria-labelledby="seasonPickerTitle">
+            <div class="seasonPickerHeader">
+                <div>
+                    <h2 id="seasonPickerTitle">Pick a seasonal look</h2>
+                    <p>Every season has its own colors and details.</p>
+                </div>
+                <button
+                    class="gradePickerClose"
+                    id="closeSeasonPicker"
+                    type="button"
+                    aria-label="Close seasonal design picker"
+                >
+                    &times;
+                </button>
+            </div>
+            <div class="grid seasonThemeGrid">
+                <button class="seasonThemeOption" type="button" data-theme-choice="auto" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🌦️</span>
+                    <span class="seasonThemeCopy">
+                        <b>Auto (Seasonal)</b>
+                        <small>A little celebration for every holiday</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="classic" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🌿</span>
+                    <span class="seasonThemeCopy">
+                        <b>Classic</b>
+                        <small>The original green palette</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="halloween" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🎃</span>
+                    <span class="seasonThemeCopy">
+                        <b>Halloween</b>
+                        <small>Ember, pumpkin, and midnight</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="christmas" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🎄</span>
+                    <span class="seasonThemeCopy">
+                        <b>Christmas</b>
+                        <small>Evergreen and winter berries</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="easter" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🐣</span>
+                    <span class="seasonThemeCopy">
+                        <b>Easter</b>
+                        <small>Fresh greens and spring gold</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="spring" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🌼</span>
+                    <span class="seasonThemeCopy">
+                        <b>Spring</b>
+                        <small>Fresh growth and gentle light</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="summer" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">☀️</span>
+                    <span class="seasonThemeCopy">
+                        <b>Summer</b>
+                        <small>Warm, bright, and energetic</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="rain" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🌧️</span>
+                    <span class="seasonThemeCopy">
+                        <b>Rain</b>
+                        <small>Fresh skies and cool energy</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="cloudy" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">☁️</span>
+                    <span class="seasonThemeCopy">
+                        <b>Cloudy</b>
+                        <small>Soft, calm, and neutral</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="winter" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">❄️</span>
+                    <span class="seasonThemeCopy">
+                        <b>Winter</b>
+                        <small>Cooler tones and calm light</small>
+                    </span>
+                </button>
+                <button class="seasonThemeOption" type="button" data-theme-choice="thanksgiving" aria-pressed="false">
+                    <span class="seasonThemeIcon" aria-hidden="true">🦃</span>
+                    <span class="seasonThemeCopy">
+                        <b>Thanksgiving</b>
+                        <small>Harvest tones and cozy warmth</small>
+                    </span>
+                </button>
+            </div>
+        </dialog>
+
+
+
+        <!-- =================================================
+             CURRICULUM
+             ================================================= -->
+
+        <section
+            class="page"
+            id="learn"
+        >
+
+            <div class="seasonPageBanner">
+                <div class="seasonPageCopy">
+                    <span class="seasonPageEyebrow">CURRICULUM</span>
+                    <h2>Find your next big idea.</h2>
+                    <p>Explore Cambridge subjects, one discovery at a time.</p>
+                </div>
+                <span class="seasonPageIcon" aria-hidden="true">📚</span>
+            </div>
+
+            <div class="card">
+
+                <div class="curriculumHeader">
+
+                    <div>
+
+                        <h2>
+                            Cambridge Curriculum
+                        </h2>
+
+                        <p>
+                            Grade <span id="curriculumGrade">
+                                7
+                            </span>
+                            •
+                            <span id="unitCount">
+                                32
+                            </span>
+                            units per subject
+                        </p>
+
+                    </div>
+
+                    <div class="curriculumActions">
+                        <button
+                            class="btn primary"
+                            type="button"
+                            aria-haspopup="dialog"
+                            aria-controls="unitPickerDialog"
+                            onclick="document.getElementById('unitPickerDialog').showModal()"
+                        >
+                            View units
+                        </button>
+                        <button
+                            class="btn"
+                            type="button"
+                            aria-haspopup="dialog"
+                            aria-controls="curriculumNotesDialog"
+                            onclick="openSelectedUnitNotes()"
+                        >
+                            Unit notes
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <select id="learnSubject" hidden></select>
+
+                <div
+                    class="curriculumSubjects"
+                    id="curriculumSubjects"
+                    role="group"
+                    aria-label="Choose a curriculum subject"
+                ></div>
+
+            </div>
+
+
+        </section>
+
+        <dialog class="gradePickerDialog curriculumUnitDialog" id="unitPickerDialog" aria-labelledby="unitPickerTitle">
+            <div class="gradePickerHeader">
+                <div>
+                    <h2 id="unitPickerTitle">Subject units</h2>
+                    <p>Select a unit to open its notes.</p>
+                </div>
+                <button
+                    class="gradePickerClose"
+                    type="button"
+                    aria-label="Close unit list"
+                    onclick="document.getElementById('unitPickerDialog').close()"
+                >
+                    &times;
+                </button>
+            </div>
+            <div class="unitGrid" id="unitGrid"></div>
+        </dialog>
+
+        <dialog class="gradePickerDialog curriculumNotesDialog" id="curriculumNotesDialog" aria-labelledby="curriculumNotesTitle">
+            <div class="gradePickerHeader">
+                <div>
+                    <h2 id="curriculumNotesTitle">Unit notes</h2>
+                    <p id="curriculumNotesSubject"></p>
+                </div>
+                <button
+                    class="gradePickerClose"
+                    type="button"
+                    aria-label="Close unit notes"
+                    onclick="document.getElementById('curriculumNotesDialog').close()"
+                >
+                    &times;
+                </button>
+            </div>
+            <div class="lessonBox" id="lessonBox">
+                <p class="muted">Choose a subject to view its unit notes.</p>
+            </div>
+        </dialog>
+
+
+
+        <!-- =================================================
+             QUIZ
+             ================================================= -->
+
+        <section
+            class="page"
+            id="quiz"
+        >
+
+            <div class="seasonPageBanner">
+                <div class="seasonPageCopy">
+                    <span class="seasonPageEyebrow">QUIZ CHALLENGE</span>
+                    <h2>Ready for a challenge?</h2>
+                    <p>Put what you know to work and see how far you can go.</p>
+                </div>
+                <span class="seasonPageIcon" aria-hidden="true">🧠</span>
+            </div>
+
+            <div class="quizWrap">
+
+                <div class="card">
+
+                    <div class="controls">
+
+                        <select id="quizSubject"></select>
+
+                        <span class="quizCount">20 questions · randomized each time</span>
+
+                        <button
+                            class="btn primary"
+                            onclick="startQuiz()"
+                        >
+                            New quiz
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        style="margin:18px 0"
+                        class="progress"
+                    >
+
+                        <div
+                            id="quizProgress"
+                            style="width:0%"
+                        ></div>
+
+                    </div>
+
+
+                    <div id="quizArea">
+
+                        <p class="muted">
+                            Choose a subject and press
+                            “New quiz”.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STUDY GPT
+             ================================================= -->
+
+        <section
+            class="page"
+            id="assistant"
+        >
+
+            <div class="seasonPageBanner">
+                <div class="seasonPageCopy">
+                    <span class="seasonPageEyebrow">STUDY GPT</span>
+                    <h2>Curiosity starts with a question.</h2>
+                    <p>Explore a new idea and keep learning at your own pace.</p>
+                </div>
+                <span class="seasonPageIcon" aria-hidden="true">💬</span>
+            </div>
+
+            <div class="card chat">
+
+                <div
+                    class="messages"
+                    id="messages"
+                >
+
+                    <div class="msg bot">
+
+                        Sry Im this Im at a vacation ask google.
+                        
+                    </div>
+
+                </div>
+
+
+                <div class="chatInput">
+
+                    <input
+                        id="chatInput"
+                        placeholder="Ask Study GPT anything about your studies..."
+                    >
+
+                    <button
+                        class="btn blue"
+                        onclick="sendChat()"
+                    >
+                        Send
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROGRESS
+             ================================================= -->
+
+        <section
+            class="page"
+            id="progress"
+        >
+
+            <div class="seasonPageBanner">
+                <div class="seasonPageCopy">
+                    <span class="seasonPageEyebrow">YOUR PROGRESS</span>
+                    <h2>Small steps add up.</h2>
+                    <p>Take a look at how far your learning has brought you.</p>
+                </div>
+                <span class="seasonPageIcon" aria-hidden="true">📈</span>
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    Your progress
+                </h2>
+
+                <p class="muted">
+                    Your results are saved locally
+                    in this browser.
+                </p>
+
+
+                <table class="table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Item
+                            </th>
+
+                            <th>
+                                Result
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                Current grade
+                            </td>
+
+                            <td id="pGrade">
+                                Grade 7
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Quizzes completed
+                            </td>
+
+                            <td id="pQuizzes">
+                                0
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Best score
+                            </td>
+
+                            <td id="pBest">
+                                0%
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+                <button
+                    class="btn"
+                    style="margin-top:15px"
+                    onclick="resetProgress()"
+                >
+                    Reset progress
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT
+             ================================================= -->
+
+        <section
+            class="page"
+            id="about"
+        >
+
+            <div class="seasonPageBanner">
+                <div class="seasonPageCopy">
+                    <span class="seasonPageEyebrow">ABOUT THE HUB</span>
+                    <h2>A hub for curious minds.</h2>
+                    <p>Learning tools for students from Grade 1 to Grade 12.</p>
+                </div>
+                <span class="seasonPageIcon" aria-hidden="true">🌍</span>
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    About EcoleRonsardHub
+                </h2>
+
+                <p class="lesson">
+
+                    EcoleRonsardHub is an educational
+                    web-app concept designed for students
+                    studying Cambridge-style subjects from
+                    Grade 1 to Grade 12.
+
+                </p>
+
+
+                <h3>
+                    What's included?
+                </h3>
+
+
+                <ul class="lesson">
+
+                    <li>
+                        Grade selection from 1–12
+                    </li>
+
+                    <li>
+                        8 core subjects
+                    </li>
+
+                    <li>
+                        20–42 curriculum units per subject
+                    </li>
+
+                    <li>
+                        Interactive quizzes
+                    </li>
+
+                    <li>
+                        Learning explanations
+                    </li>
+
+                    <li>
+                        Local progress tracking
+                    </li>
+
+                    <li>
+                        Dark/light mode
+                    </li>
+
+                    <li>
+                        Study GPT interface
+                    </li>
+
+                </ul>
+
+
+                <p class="muted">
+
+                    The curriculum expands automatically
+                    as the grade increases.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   SUBJECTS
+   ========================================================= */
+
+const subjects = [
+
+    {
+        id:"math",
+        name:"Mathematics",
+        icon:"∑",
+        desc:"Numbers, algebra, geometry and problem solving."
+    },
+
+    {
+        id:"english",
+        name:"English",
+        icon:"A",
+        desc:"Reading, writing, grammar and vocabulary."
+    },
+
+    {
+        id:"science",
+        name:"Science",
+        icon:"⚗",
+        desc:"Biology, chemistry, physics and scientific thinking."
+    },
+
+    {
+        id:"french",
+        name:"French",
+        icon:"Fr",
+        desc:"Vocabulary, grammar, reading and communication."
+    },
+
+    {
+        id:"geography",
+        name:"Geography",
+        icon:"◎",
+        desc:"Places, people, environments and Earth systems."
+    },
+
+    {
+        id:"history",
+        name:"History",
+        icon:"⌛",
+        desc:"People, societies, events and historical evidence."
+    },
+
+    {
+        id:"computing",
+        name:"Computing",
+        icon:"⌘",
+        desc:"Algorithms, data, digital systems and coding."
+    },
+
+    {
+        id:"business",
+        name:"Business",
+        icon:"₵",
+        desc:"Enterprise, finance and basic economics."
+    }
+
+];
+
+
+/* =========================================================
+   APP STATE
+   ========================================================= */
+
+let grade =
+    Number(localStorage.getItem("er_grade") || 7);
+
+let completed =
+    Number(localStorage.getItem("er_completed") || 0);
+
+let best =
+    Number(localStorage.getItem("er_best") || 0);
+
+let quizScores = [];
+try{
+    const savedQuizScores = JSON.parse(localStorage.getItem("er_quiz_scores") || "[]");
+    if(Array.isArray(savedQuizScores)){
+        quizScores = savedQuizScores.filter(score => Number.isFinite(score));
+    }
+}catch{}
+
+let quizState = {
+
+    questions:[],
+    index:0,
+    score:0,
+    locked:false
+
+};
+
+let chatBusy = false;
+
+let currentCurriculumUnit = null;
+
+
+/* =========================================================
+   UNIT COUNT
+   ========================================================= */
+
+function getUnitCount(g){
+
+    return 18 + (g * 2);
+
+}
+
+
+/*
+    Grade 1  = 20
+    Grade 2  = 22
+    Grade 3  = 24
+    Grade 4  = 26
+    Grade 5  = 28
+    Grade 6  = 30
+    Grade 7  = 32
+    Grade 8  = 34
+    Grade 9  = 36
+    Grade 10 = 38
+    Grade 11 = 40
+    Grade 12 = 42
+*/
+
+
+/* =========================================================
+   CURRICULUM TOPICS
+   ========================================================= */
+
+const curriculumTopics = {
+
+    math:[
+        "Number Systems",
+        "Place Value",
+        "Integers",
+        "Factors and Multiples",
+        "Fractions",
+        "Decimals",
+        "Percentages",
+        "Ratio and Proportion",
+        "Algebraic Expressions",
+        "Equations",
+        "Sequences",
+        "Coordinates",
+        "Angles",
+        "Properties of Shapes",
+        "Perimeter",
+        "Area",
+        "Volume",
+        "Symmetry",
+        "Transformations",
+        "Data Handling",
+        "Probability",
+        "Statistics",
+        "Graphs",
+        "Linear Graphs",
+        "Pythagoras",
+        "Circles",
+        "Congruence",
+        "Similarity",
+        "Vectors",
+        "Trigonometry",
+        "Advanced Algebra",
+        "Functions",
+        "Quadratics",
+        "Inequalities",
+        "Surds",
+        "Indices",
+        "Standard Form",
+        "Advanced Statistics",
+        "Advanced Probability",
+        "Mathematical Modelling",
+        "Problem Solving",
+        "Mathematical Reasoning"
+    ],
+
+    english:[
+        "Reading Skills",
+        "Comprehension",
+        "Vocabulary",
+        "Spelling",
+        "Grammar",
+        "Sentence Structure",
+        "Paragraph Writing",
+        "Descriptive Writing",
+        "Narrative Writing",
+        "Persuasive Writing",
+        "Informative Writing",
+        "Formal Writing",
+        "Creative Writing",
+        "Poetry",
+        "Figurative Language",
+        "Metaphor and Simile",
+        "Characterisation",
+        "Setting",
+        "Theme",
+        "Structure",
+        "Tone",
+        "Writer's Purpose",
+        "Language Analysis",
+        "Evidence",
+        "Inference",
+        "Comparison",
+        "Argument",
+        "Speech Writing",
+        "Article Writing",
+        "Review Writing",
+        "Essay Writing",
+        "Advanced Analysis",
+        "Rhetorical Devices",
+        "Context",
+        "Critical Reading",
+        "Literary Techniques",
+        "Advanced Vocabulary",
+        "Exam Writing",
+        "Editing",
+        "Proofreading",
+        "Independent Writing",
+        "Advanced Literature"
+    ],
+
+    science:[
+        "Cells",
+        "Microscopes",
+        "Living Organisms",
+        "Classification",
+        "Microorganisms",
+        "Materials",
+        "Properties of Materials",
+        "Particles",
+        "States of Matter",
+        "Changes of State",
+        "Forces",
+        "Energy",
+        "Electricity",
+        "Magnetism",
+        "Waves",
+        "Light",
+        "Sound",
+        "Earth Physics",
+        "Rocks",
+        "The Water Cycle",
+        "Atoms",
+        "Elements",
+        "Compounds",
+        "Chemical Reactions",
+        "Acids and Alkalis",
+        "Periodic Table",
+        "Ecology",
+        "Food Chains",
+        "Photosynthesis",
+        "Respiration",
+        "Human Biology",
+        "Reproduction",
+        "Genetics",
+        "Evolution",
+        "Space",
+        "Earth Systems",
+        "Climate",
+        "Scientific Investigation",
+        "Data Analysis",
+        "Experimental Design",
+        "Scientific Models",
+        "Advanced Science"
+    ],
+
+    french:[
+        "Greetings",
+        "Introducing Yourself",
+        "Numbers",
+        "Colours",
+        "Family",
+        "School",
+        "Classroom Objects",
+        "Days and Months",
+        "Time",
+        "Food",
+        "Drinks",
+        "Hobbies",
+        "Sports",
+        "Weather",
+        "Home",
+        "Town",
+        "Directions",
+        "Clothing",
+        "Daily Routine",
+        "Common Verbs",
+        "Present Tense",
+        "Past Tense",
+        "Future Tense",
+        "Adjectives",
+        "Articles",
+        "Pronouns",
+        "Questions",
+        "Negatives",
+        "Opinions",
+        "Descriptions",
+        "Travel",
+        "Shopping",
+        "Health",
+        "Technology",
+        "Environment",
+        "French Culture",
+        "Reading",
+        "Listening",
+        "Writing",
+        "Speaking",
+        "Translation",
+        "Advanced French"
+    ],
+
+    geography:[
+        "Map Skills",
+        "Grid References",
+        "Scale",
+        "Direction",
+        "Latitude",
+        "Longitude",
+        "Time Zones",
+        "Rivers",
+        "River Processes",
+        "Flooding",
+        "Coasts",
+        "Coastal Processes",
+        "Weather",
+        "Climate",
+        "Climate Change",
+        "Ecosystems",
+        "Biomes",
+        "Population",
+        "Migration",
+        "Settlements",
+        "Urbanisation",
+        "Development",
+        "Resources",
+        "Agriculture",
+        "Industry",
+        "Energy",
+        "Tourism",
+        "Natural Hazards",
+        "Earthquakes",
+        "Volcanoes",
+        "Tropical Storms",
+        "Glaciers",
+        "Rocks",
+        "Tectonic Plates",
+        "Oceans",
+        "Environmental Management",
+        "Sustainability",
+        "Fieldwork",
+        "Geographical Data",
+        "Case Studies",
+        "Global Issues",
+        "Advanced Geography"
+    ],
+
+    history:[
+        "Historical Evidence",
+        "Primary Sources",
+        "Secondary Sources",
+        "Ancient Civilisations",
+        "Ancient Egypt",
+        "Ancient Greece",
+        "Roman Empire",
+        "Medieval Europe",
+        "African Civilisations",
+        "Islamic Civilisations",
+        "Mali Empire",
+        "Songhai Empire",
+        "Trade",
+        "Exploration",
+        "Renaissance",
+        "Reformation",
+        "Industrial Revolution",
+        "Empire",
+        "Colonialism",
+        "Resistance",
+        "World War I",
+        "World War II",
+        "Cold War",
+        "Independence",
+        "Modern Africa",
+        "Ghanaian History",
+        "Civil Rights",
+        "Political Change",
+        "Economic Change",
+        "Social Change",
+        "Historical Interpretation",
+        "Cause and Consequence",
+        "Change and Continuity",
+        "Chronology",
+        "Historical Arguments",
+        "Comparing Sources",
+        "Historical Research",
+        "Case Studies",
+        "Exam Skills",
+        "Extended Writing",
+        "Independent Investigation",
+        "Advanced History"
+    ],
+
+    computing:[
+        "Computer Systems",
+        "Hardware",
+        "Software",
+        "Operating Systems",
+        "Files and Data",
+        "Binary",
+        "Data Representation",
+        "Algorithms",
+        "Flowcharts",
+        "Pseudocode",
+        "Variables",
+        "Selection",
+        "Iteration",
+        "Functions",
+        "Arrays",
+        "Programming",
+        "Python",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Web Design",
+        "Databases",
+        "Networks",
+        "Internet",
+        "Cybersecurity",
+        "Digital Safety",
+        "Encryption",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Science",
+        "Boolean Logic",
+        "Logic Gates",
+        "Computer Architecture",
+        "CPU",
+        "Memory",
+        "Storage",
+        "Software Development",
+        "Debugging",
+        "Testing",
+        "Computational Thinking",
+        "Projects",
+        "Advanced Computing"
+    ],
+
+    business:[
+        "What Is Business?",
+        "Business Aims",
+        "Entrepreneurs",
+        "Business Ideas",
+        "Customers",
+        "Needs and Wants",
+        "Markets",
+        "Demand",
+        "Supply",
+        "Competition",
+        "Revenue",
+        "Costs",
+        "Profit",
+        "Loss",
+        "Budgets",
+        "Cash Flow",
+        "Marketing",
+        "Market Research",
+        "Advertising",
+        "Branding",
+        "Products",
+        "Services",
+        "Production",
+        "Employees",
+        "Motivation",
+        "Business Ownership",
+        "Sole Traders",
+        "Partnerships",
+        "Companies",
+        "Finance",
+        "Investment",
+        "Business Growth",
+        "International Business",
+        "Globalisation",
+        "Technology in Business",
+        "E-Commerce",
+        "Ethics",
+        "Sustainability",
+        "Business Strategy",
+        "Decision Making",
+        "Business Plans",
+        "Advanced Business"
+    ]
+
+};
+
+
+/* =========================================================
+   CREATE CURRICULUM
+   ========================================================= */
+
+function getUnitNotes(subjectId, topic, grade){
+
+    const noteBank = {
+
+        math:{
+            intro:"In Cambridge mathematics, learners use number fluency, reasoning and problem solving to explain and justify their thinking.",
+            keyIdeas:[
+                "Use place value, number facts and operations accurately before solving multi-step problems.",
+                "Represent relationships with equations, graphs or diagrams to show structure clearly.",
+                "Check whether an answer is sensible by estimating and testing it against the context."
+            ],
+            example:"If a shape has perimeter 30 cm and two sides are 8 cm and 7 cm, the remaining side can be found by subtracting the known lengths from the total. This shows that careful calculation and checking are more important than guessing.",
+            challenge:"Solve one problem using a diagram, one using a formula, and one using estimation to compare your methods."
+        },
+
+        english:{
+            intro:"Cambridge English focuses on reading for meaning, writing with clear organisation, and analysing how language creates effect.",
+            keyIdeas:[
+                "Identify the writer's purpose, audience and tone before choosing evidence from the text.",
+                "Use paragraphs, topic sentences and varied sentence structures to organise ideas clearly.",
+                "Select precise vocabulary and imagery to make writing vivid and convincing."
+            ],
+            example:"In a descriptive paragraph, a sentence such as 'The dawn spread gold across the hills' creates mood and visual detail. This works because it combines image, colour and a sense of atmosphere.",
+            challenge:"Annotate one paragraph by labelling the purpose, tone, imagery and evidence used by the writer."
+        },
+
+        science:{
+            intro:"Cambridge science develops practical understanding of living things, materials, forces, energy and scientific investigation.",
+            keyIdeas:[
+                "Ask a question, make a prediction, test ideas and use observations to draw conclusions.",
+                "Use scientific vocabulary accurately so explanations are precise and evidence-based.",
+                "Recognise patterns in data and explain them using scientific ideas rather than opinion."
+            ],
+            example:"When testing how the temperature affects dissolving, the independent variable is temperature, the dependent variable is the rate of dissolving, and controlled variables include the amount of water and the type of solute.",
+            challenge:"State the variable you would change, the variable you would measure, and the variables you would keep constant in one investigation."
+        },
+
+        french:{
+            intro:"The Cambridge French curriculum develops communication in everyday contexts through listening, speaking, reading and writing with accurate grammar.",
+            keyIdeas:[
+                "Build confidence with high-frequency verbs, articles and adjective agreement.",
+                "Use accurate word order in sentences so meaning is clear and natural.",
+                "Connect ideas with time markers, opinions and connectors to speak and write more fluently."
+            ],
+            example:"The phrase 'Je vais au marché avec mes amis' uses a present tense verb, a preposition, and a place phrase to give a clear message about action and context.",
+            challenge:"Write three sentences using a verb in the present tense, one in the past tense and one with a question phrase."
+        },
+
+        geography:{
+            intro:"Cambridge geography helps students explain how places, people and environments are connected through natural processes and human decisions.",
+            keyIdeas:[
+                "Use maps, graphs and data to observe patterns across space and time.",
+                "Explain physical processes such as erosion, rainfall and tectonic movement with clear cause-and-effect links.",
+                "Evaluate human impact, sustainability and the reasons behind different settlement and land-use patterns."
+            ],
+            example:"A river changes the landscape through erosion, transport and deposition. This creates features such as valleys, meanders and floodplains as the river moves through the landscape.",
+            challenge:"Describe one physical feature, explain how it was formed, and suggest one way humans can manage the risks associated with it."
+        },
+
+        history:{
+            intro:"Cambridge history focuses on historical enquiry, evidence and explanation of how people and societies changed over time.",
+            keyIdeas:[
+                "Use evidence from sources to identify what happened, why it happened and what changed afterwards.",
+                "Distinguish between cause, consequence, continuity and change when explaining a historical event.",
+                "Compare interpretations carefully and support claims with solid historical knowledge."
+            ],
+            example:"When studying a historical event, a good answer contrasts the immediate effects with longer-term changes and supports each point with evidence from different sources.",
+            challenge:"Write a short historical explanation using one cause, one consequence and one piece of evidence from the period you are studying."
+        },
+
+        computing:{
+            intro:"Cambridge computing teaches students to think algorithmically, create solutions with digital tools and evaluate how systems work.",
+            keyIdeas:[
+                "Break a problem into smaller steps before designing an algorithm or program.",
+                "Use variables, loops and conditions logically to control how a program behaves.",
+                "Test and debug code systematically so that solutions are reliable and easy to improve."
+            ],
+            example:"A simple algorithm for calculating the total of numbers in a list can use a loop to add each item to a running total and then print the final result.",
+            challenge:"Plan an algorithm in pseudocode, then identify where a loop, a condition and an output would be needed."
+        },
+
+        business:{
+            intro:"Cambridge business studies helps learners understand how businesses create value, satisfy customers and respond to changing markets.",
+            keyIdeas:[
+                "Businesses aim to meet customer needs while making profit, growth or sustainability possible.",
+                "Good decisions depend on understanding costs, revenue, demand, competition and cash flow.",
+                "Marketing, finance and ethics all influence whether a business can succeed in the long term."
+            ],
+            example:"A business may lower prices to attract more customers, but it must also consider whether this increases sales enough to cover costs and maintain profit.",
+            challenge:"Explain how one business decision affects customer demand, costs and the business's long-term success."
+        }
+
+    };
+
+    const subjectNotes = noteBank[subjectId] || noteBank.math;
+    const topicLabel = topic || "This topic";
+    const gradeText = grade >= 10 ? "higher-level understanding" : "clear, structured understanding";
+
+    return {
+        title: topic,
+        objective:`${topicLabel} is a core idea in the Cambridge ${subjects.find(s => s.id === subjectId)?.name || "curriculum"}. Students should understand the concept, apply it in context and explain their reasoning using correct subject vocabulary.`,
+        summary:`${subjectNotes.intro} In this unit, learners focus on ${topicLabel.toLowerCase()} and develop ${gradeText} through guided practice, application and reflection.`,
+        keyIdeas: subjectNotes.keyIdeas,
+        example: subjectNotes.example,
+        challenge: subjectNotes.challenge
+    };
+}
+
+function createCurriculum(subjectId,g){
+
+    const topics =
+        curriculumTopics[subjectId];
+
+    const total =
+        getUnitCount(g);
+
+    const units = [];
+
+    for(let i=0;i<total;i++){
+
+        const topic =
+            topics[i % topics.length];
+
+        const levelText =
+            g <= 3
+                ? "Introduction"
+                : g <= 6
+                    ? "Core"
+                    : g <= 9
+                        ? "Intermediate"
+                        : "Advanced";
+
+        const notes = getUnitNotes(subjectId, topic, g);
+
+        units.push({
+
+            number:i+1,
+            title:topic,
+            description:`${levelText} ${topic} for Grade ${g}. Learn the key ideas, practise examples and apply the topic to Cambridge-style questions.`,
+            notes
+
+        });
+
+    }
+
+    return units;
+}
+
+
+/* =========================================================
+   RENDER GRADES
+   ========================================================= */
+
+function renderGrades(){
+
+    const box =
+        document.getElementById("gradeGrid");
+
+    box.innerHTML = "";
+
+    for(let i=1;i<=12;i++){
+
+        const b =
+            document.createElement("button");
+
+        b.className =
+            "grade" +
+            (i===grade ? " selected" : "");
+
+        b.innerHTML = `
+            <b>${i}</b>
+            <small>Grade</small>
+        `;
+
+        b.onclick =
+            () => setGrade(i);
+
+        box.appendChild(b);
+    }
+}
+
+
+/* =========================================================
+   RENDER SUBJECTS
+   ========================================================= */
+
+function renderSubjects(){
+
+    document.getElementById("subjectGrid").innerHTML =
+
+        subjects.map(s => `
+
+            <div class="card subject">
+
+                <div class="icon">
+                    ${s.icon}
+                </div>
+
+                <h3>
+                    ${s.name}
+                </h3>
+
+                <p>
+                    ${s.desc}
+                </p>
+
+            </div>
+
+        `).join("");
+
+
+    [
+        "learnSubject",
+        "quizSubject"
+    ].forEach(id => {
+
+        document.getElementById(id).innerHTML =
+
+            subjects.map(s => `
+
+                <option value="${s.id}">
+                    ${s.name}
+                </option>
+
+            `).join("");
+
+    });
+
+    const curriculumSubjectBox =
+        document.getElementById("curriculumSubjects");
+
+    curriculumSubjectBox.innerHTML = subjects.map((s,index) => `
+
+        <button
+            class="curriculumSubject${s.id === document.getElementById("learnSubject").value ? " is-selected" : ""}"
+            type="button"
+            data-subject="${s.id}"
+            aria-pressed="${s.id === document.getElementById("learnSubject").value}"
+            style="--subject-index:${index}"
+        >
+            <span class="curriculumSubjectIcon" aria-hidden="true">
+                ${s.icon}
+            </span>
+            <span class="curriculumSubjectCopy">
+                <strong>${s.name}</strong>
+                <small>${s.desc}</small>
+            </span>
+            <span class="curriculumSubjectCheck" aria-hidden="true">✓</span>
+        </button>
+
+    `).join("");
+
+    curriculumSubjectBox
+        .querySelectorAll(".curriculumSubject")
+        .forEach(button => {
+            button.onclick = () => chooseCurriculumSubject(button.dataset.subject);
+        });
+
+}
+
+
+function chooseCurriculumSubject(subjectId){
+
+    document.getElementById("learnSubject").value = subjectId;
+
+    document
+        .querySelectorAll(".curriculumSubject")
+        .forEach(button => {
+            const isSelected = button.dataset.subject === subjectId;
+            button.classList.toggle("is-selected", isSelected);
+            button.setAttribute("aria-pressed", isSelected);
+        });
+
+    loadCurriculum();
+
+}
+
+
+/* =========================================================
+   SET GRADE
+   ========================================================= */
+
+function setGrade(g){
+
+    grade = g;
+
+    localStorage.setItem(
+        "er_grade",
+        g
+    );
+
+
+    document.getElementById(
+        "gradePill"
+    ).textContent =
+        "Grade " + g;
+
+
+    document.getElementById(
+        "statGrade"
+    ).textContent =
+        g;
+
+
+    document.getElementById(
+        "pGrade"
+    ).textContent =
+        "Grade " + g;
+
+
+    document.getElementById(
+        "curriculumGrade"
+    ).textContent =
+        g;
+
+
+    document.getElementById(
+        "unitCount"
+    ).textContent =
+        getUnitCount(g);
+
+
+    renderGrades();
+
+
+    loadCurriculum();
+
+    document.getElementById("gradePicker").close();
+
+}
+
+
+/* =========================================================
+   SHOW PAGE
+   ========================================================= */
+
+function showPage(id){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(p =>
+            p.classList.remove("active")
+        );
+
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+
+    document
+        .querySelectorAll(".nav button")
+        .forEach(b => {
+
+            b.classList.toggle(
+                "active",
+                b.dataset.page === id
+            );
+
+        });
+
+
+    document.getElementById(
+        "pageTitle"
+    ).textContent = {
+
+        home:"Dashboard",
+        learn:"Curriculum",
+        quiz:"Quizzes",
+        assistant:"Study GPT",
+        progress:"Progress",
+        about:"About"
+
+    }[id];
+
+
+    document
+        .getElementById("sidebar")
+        .classList.remove("open");
+
+
+    if(id === "progress"){
+
+        updateStats();
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD CURRICULUM
+   ========================================================= */
+
+function loadCurriculum(){
+
+    const subjectId =
+        document.getElementById(
+            "learnSubject"
+        ).value;
+
+
+    const subject =
+        subjects.find(
+            s => s.id === subjectId
+        );
+
+
+    const units =
+        createCurriculum(
+            subjectId,
+            grade
+        );
+
+
+    document.getElementById(
+        "curriculumGrade"
+    ).textContent =
+        grade;
+
+
+    document.getElementById(
+        "unitCount"
+    ).textContent =
+        units.length;
+
+    currentCurriculumUnit = units[0];
+
+    document.getElementById(
+        "unitPickerTitle"
+    ).textContent =
+        `${subject.name} units • Grade ${grade}`;
+
+
+    document.getElementById(
+        "lessonBox"
+    ).innerHTML = `
+
+        <h2>
+            ${subject.icon}
+            ${subject.name}
+            • Grade ${grade}
+        </h2>
+
+        <p class="lesson">
+
+            This Grade ${grade} course contains
+            ${units.length} units.
+
+            Select any unit below to open its
+            learning overview.
+
+        </p>
+
+    `;
+
+
+    const grid =
+        document.getElementById(
+            "unitGrid"
+        );
+
+
+    grid.innerHTML = "";
+
+
+    units.forEach((unit,index) => {
+
+        const card =
+            document.createElement("button");
+
+        card.type = "button";
+
+        card.className =
+            "unitCard";
+        card.style.setProperty("--unit-index", index);
+
+
+        card.innerHTML = `
+
+            <span class="unitNumber">
+                Unit ${unit.number}
+            </span>
+
+            <h3>
+                ${unit.title}
+            </h3>
+
+            <p>
+                ${unit.description}
+            </p>
+
+            <div class="unitStatus">
+                📖 Open unit →
+            </div>
+
+        `;
+
+
+        card.onclick = () =>
+            openUnit(
+                subjectId,
+                unit
+            );
+
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+/* =========================================================
+   OPEN UNIT
+   ========================================================= */
+
+function openUnit(subjectId,unit){
+
+    const subject =
+        subjects.find(
+            s => s.id === subjectId
+        );
+
+    currentCurriculumUnit = unit;
+    const notes = unit.notes || getUnitNotes(subjectId, unit.title, grade);
+    const completionKey = `er_unit_${grade}_${subjectId}_${unit.number}`;
+    const isCompleted = localStorage.getItem(completionKey) === "true";
+
+    document.getElementById(
+        "curriculumNotesSubject"
+    ).textContent =
+        `${subject.name} • Grade ${grade} • Unit ${unit.number}`;
+
+    document.getElementById(
+        "lessonBox"
+    ).innerHTML = `
+
+        <h2>
+            Unit ${unit.number}:
+            ${notes.title || unit.title}
+        </h2>
+
+        <p class="muted">
+            ${subject.name}
+            • Grade ${grade}
+        </p>
+
+        <hr
+            style="
+                border:0;
+                border-top:1px solid var(--border);
+                margin:18px 0;
+            "
+        >
+
+        <h3>
+            Learning objective
+        </h3>
+
+        <p class="lesson">
+            ${notes.objective}
+        </p>
+
+        <h3>
+            Key ideas
+        </h3>
+
+        <ul class="lesson">
+            ${notes.keyIdeas.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+
+        <h3>
+            Worked example
+        </h3>
+
+        <p class="lesson">
+            ${notes.example}
+        </p>
+
+        <h3>
+            Quick challenge
+        </h3>
+
+        <p class="lesson">
+            ${notes.challenge}
+        </p>
+
+        <h3>
+            Summary
+        </h3>
+
+        <p class="lesson">
+            ${notes.summary}
+        </p>
+
+        <button
+            class="btn primary unitCompleteButton${isCompleted ? " is-complete" : ""}"
+            ${isCompleted ? "disabled" : ""}
+            onclick="markUnitComplete(${unit.number})"
+        >
+            ${isCompleted ? "✓ Unit completed" : "Mark unit complete"}
+        </button>
+
+        <div class="unitCompletionStatus" role="status" ${isCompleted ? "" : "hidden"}>
+            <span aria-hidden="true">✓</span>
+            <span>Progress saved. Nice work completing this unit.</span>
+        </div>
+
+    `;
+
+
+    const unitPicker = document.getElementById("unitPickerDialog");
+    if(unitPicker.open){
+        unitPicker.close();
+    }
+
+    const notesDialog = document.getElementById("curriculumNotesDialog");
+    if(!notesDialog.open){
+        notesDialog.showModal();
+    }
+
+}
+
+
+function openSelectedUnitNotes(){
+
+    const subjectId = document.getElementById("learnSubject").value;
+    const unit = currentCurriculumUnit || createCurriculum(subjectId,grade)[0];
+
+    openUnit(subjectId,unit);
+
+}
+
+
+/* =========================================================
+   UNIT PROGRESS
+   ========================================================= */
+
+function markUnitComplete(number){
+
+    const key =
+        `er_unit_${grade}_${document.getElementById("learnSubject").value}_${number}`;
+
+    localStorage.setItem(
+        key,
+        "true"
+    );
+
+    const button = document.querySelector(".unitCompleteButton");
+    const status = document.querySelector(".unitCompletionStatus");
+
+    if(button){
+        button.textContent = "✓ Unit completed";
+        button.disabled = true;
+        button.classList.add("is-complete");
+    }
+
+    if(status){
+        status.hidden = false;
+    }
+
+}
+
+
+/* =========================================================
+   QUIZ BANK
+   ========================================================= */
+
+const qbank = {
+
+    math:[
+
+        ["What is 7 × 8?",
+        ["54","56","64","48"],1],
+
+        ["Which number is prime?",
+        ["21","27","29","33"],2],
+
+        ["What is 3/4 as a decimal?",
+        ["0.25","0.5","0.75","1.25"],2],
+
+        ["Solve: 2x + 4 = 12",
+        ["2","4","6","8"],1],
+
+        ["What is the area of a rectangle 8 cm by 5 cm?",
+        ["13 cm²","26 cm²","40 cm²","80 cm²"],2],
+
+        ["What is 15% of 200?",
+        ["15","20","30","40"],2],
+
+        ["A triangle has angles 50° and 60°. What is the third angle?",
+        ["60°","70°","80°","90°"],1],
+
+        ["What is the next term: 3, 6, 9, 12, ...?",
+        ["14","15","16","18"],1],
+
+        ["What is √81?",
+        ["7","8","9","10"],2],
+
+        ["If y = 3x and x = 5, what is y?",
+        ["8","10","15","20"],2]
+
+    ],
+
+    english:[
+
+        ["Which word is a noun?",
+        ["quickly","beautiful","school","run"],2],
+
+        ["Choose the correct spelling.",
+        ["neccessary","necessary","necesary","necessery"],1],
+
+        ["What is a synonym for 'rapid'?",
+        ["slow","fast","quiet","weak"],1],
+
+        ["Which is a complete sentence?",
+        [
+            "Because it rained.",
+            "Running through the park.",
+            "The dog barked loudly.",
+            "After school."
+        ],2],
+
+        ["What is the past tense of 'go'?",
+        ["goed","goes","went","gone"],2],
+
+        ["Which word is an adjective?",
+        ["happily","blue","jump","teacher"],1],
+
+        ["What punctuation ends a question?",
+        [".","!",",","?"],3],
+
+        ["What is the main purpose of a conclusion?",
+        [
+            "Introduce a topic",
+            "End and summarize ideas",
+            "Add a title",
+            "Ask a question only"
+        ],1],
+
+        ["Which is a pronoun?",
+        ["table","they","green","slowly"],1],
+
+        ["'The wind whispered' is an example of:",
+        ["simile","personification","rhyme","hyperbole"],1]
+
+    ],
+
+    science:[
+
+        ["Which organ pumps blood around the body?",
+        ["lungs","brain","heart","stomach"],2],
+
+        ["Plants make food mainly through:",
+        ["digestion","photosynthesis","respiration","evaporation"],1],
+
+        ["Water boils at sea level at:",
+        ["0°C","50°C","100°C","200°C"],2],
+
+        ["Which particle has a negative charge?",
+        ["proton","neutron","electron","nucleus"],2],
+
+        ["The force pulling objects toward Earth is:",
+        ["friction","gravity","magnetism","upthrust"],1],
+
+        ["Which gas do humans need for aerobic respiration?",
+        ["carbon dioxide","oxygen","nitrogen only","hydrogen"],1],
+
+        ["A change from solid to liquid is called:",
+        ["freezing","condensation","melting","evaporation"],2],
+
+        ["Which is a renewable energy source?",
+        ["coal","oil","solar","natural gas"],2],
+
+        ["The basic unit of life is the:",
+        ["atom","cell","organ","tissue"],1],
+
+        ["Which material is usually a good electrical conductor?",
+        ["rubber","glass","copper","wood"],2]
+
+    ],
+
+    french:[
+
+        ["What does 'bonjour' mean?",
+        ["Goodbye","Hello","Please","Thanks"],1],
+
+        ["What is 'chat' in English?",
+        ["dog","cat","horse","bird"],1],
+
+        ["Choose the correct form: Je ___ un livre.",
+        ["lis","lit","lisez","lire"],0],
+
+        ["What does 'merci' mean?",
+        ["Sorry","Please","Thank you","Good morning"],2],
+
+        ["'Rouge' means:",
+        ["red","blue","green","yellow"],0],
+
+        ["What is the plural of 'un livre'?",
+        ["des livres","un livres","les livre","des livre"],0],
+
+        ["'Je suis' means:",
+        ["I have","I am","I go","I do"],1],
+
+        ["What is 'maison'?",
+        ["school","house","car","food"],1],
+
+        ["Choose the correct article: ___ école",
+        ["le","la","l'","un"],2],
+
+        ["'Au revoir' means:",
+        ["See you / goodbye","Good night only","Welcome","Excuse me"],0]
+
+    ],
+
+    geography:[
+
+        ["Which is the largest ocean?",
+        ["Atlantic","Indian","Pacific","Arctic"],2],
+
+        ["A line measuring distance north or south of the Equator is:",
+        ["longitude","latitude","altitude","scale"],1],
+
+        ["Which layer of Earth is the outer solid layer?",
+        ["core","mantle","crust","inner core"],2],
+
+        ["Which instrument measures air pressure?",
+        ["thermometer","barometer","rain gauge","compass"],1],
+
+        ["The Equator is at:",
+        ["0° latitude","0° longitude","90° latitude","180° longitude"],0],
+
+        ["Which is a continent?",
+        ["Sahara","Amazon","Africa","Pacific"],2],
+
+        ["What is a map scale used for?",
+        [
+            "Showing direction only",
+            "Comparing map distance to real distance",
+            "Measuring rainfall",
+            "Showing population only"
+        ],1],
+
+        ["A river's mouth is where it:",
+        [
+            "begins",
+            "flows underground",
+            "enters a sea/lake",
+            "changes color"
+        ],2],
+
+        ["Which is a natural hazard?",
+        ["Traffic","Earthquake","Shopping","Recycling"],1],
+
+        ["Weather describes:",
+        [
+            "long-term climate patterns only",
+            "short-term atmospheric conditions",
+            "population",
+            "land ownership"
+        ],1]
+
+    ],
+
+    history:[
+
+        ["The ancient Egyptians developed civilization along the:",
+        ["Nile","Amazon","Thames","Yangtze"],0],
+
+        ["The Roman Empire was centered around:",
+        ["Rome","Athens","Cairo","Paris"],0],
+
+        ["A primary source is:",
+        [
+            "a modern summary",
+            "evidence from the time studied",
+            "a fictional story",
+            "a textbook only"
+        ],1],
+
+        ["The pyramids of Giza are in:",
+        ["Greece","Egypt","Italy","India"],1],
+
+        ["The Middle Ages came after the:",
+        ["Ancient period","Modern period","Future","Stone Age only"],0],
+
+        ["Which invention helped spread printed books in Europe?",
+        ["Compass","Printing press","Steam engine","Telephone"],1],
+
+        ["Archaeology studies:",
+        [
+            "stars only",
+            "past human activity through material remains",
+            "weather",
+            "future technology"
+        ],1],
+
+        ["A timeline is mainly used to show:",
+        ["sequence of events","map scale","temperature","population density"],0],
+
+        ["Which civilization built Machu Picchu?",
+        ["Inca","Roman","Egyptian","Minoan"],0],
+
+        ["Historians use evidence to:",
+        [
+            "prove every detail with certainty",
+            "interpret and understand the past",
+            "predict weather",
+            "write fiction"
+        ],1]
+
+    ],
+
+    computing:[
+
+        ["What does HTML structure?",
+        ["Web pages","Electric circuits","Paintings","Databases only"],0],
+
+        ["A step-by-step method for solving a problem is an:",
+        ["algorithm","avatar","adapter","array only"],0],
+
+        ["Which is a programming language?",
+        ["Python","Chrome","HTML only","Wi-Fi"],0],
+
+        ["What does CPU commonly stand for?",
+        [
+            "Central Processing Unit",
+            "Computer Power Utility",
+            "Core Program User",
+            "Central Print Unit"
+        ],0],
+
+        ["Binary uses which two digits?",
+        ["1 and 2","0 and 1","2 and 3","5 and 10"],1],
+
+        ["CSS is mainly used for:",
+        [
+            "styling web pages",
+            "storing passwords",
+            "sending emails only",
+            "creating hardware"
+        ],0],
+
+        ["A variable in programming stores:",
+        ["a value/data","a keyboard","a monitor","electricity"],0],
+
+        ["Which is an input device?",
+        ["Keyboard","Monitor","Speaker","Projector"],0],
+
+        ["A bug is:",
+        [
+            "a programming error",
+            "a computer virus always",
+            "a keyboard key",
+            "a website"
+        ],0],
+
+        ["What does URL identify?",
+        [
+            "a web resource address",
+            "a CPU chip",
+            "a file type only",
+            "a password"
+        ],0]
+
+    ],
+
+    business:[
+
+        ["Revenue is money a business:",
+        [
+            "earns from sales",
+            "borrows only",
+            "pays in tax only",
+            "loses"
+        ],0],
+
+        ["A customer is someone who:",
+        [
+            "buys goods or services",
+            "owns every business",
+            "sets all laws",
+            "makes currency"
+        ],0],
+
+        ["Profit is generally:",
+        [
+            "revenue minus costs",
+            "costs plus debt",
+            "sales plus expenses",
+            "tax only"
+        ],0],
+
+        ["An entrepreneur is someone who:",
+        [
+            "starts or runs a business venture",
+            "only works for government",
+            "never takes risks",
+            "only buys products"
+        ],0],
+
+        ["A budget helps a person/business:",
+        [
+            "plan income and spending",
+            "avoid all taxes",
+            "guarantee profit",
+            "print money"
+        ],0],
+
+        ["Demand refers to:",
+        [
+            "willingness and ability to buy",
+            "amount produced only",
+            "money stored",
+            "number of employees"
+        ],0],
+
+        ["A fixed cost generally:",
+        [
+            "does not change directly with output in the short run",
+            "is always zero",
+            "is sales revenue",
+            "is a customer"
+        ],0],
+
+        ["Marketing aims to:",
+        [
+            "communicate value and attract customers",
+            "eliminate all costs",
+            "replace accounting",
+            "create laws"
+        ],0],
+
+        ["An asset is something a business:",
+        [
+            "owns or controls with value",
+            "owes only",
+            "sells at a loss always",
+            "must borrow"
+        ],0],
+
+        ["Competition occurs when businesses:",
+        [
+            "seek customers in the same market",
+            "work as one company",
+            "stop selling",
+            "avoid customers"
+        ],0]
+
+    ]
+
+};
+
+
+/* =========================================================
+   GENERATED QUESTION POOLS
+   ========================================================= */
+
+const GENERATED_QUESTIONS_PER_SUBJECT = 10000;
+const generatedQuizPoolCache = Object.create(null);
+
+function formatQuizNumber(value){
+    const rounded = Math.round((value + Number.EPSILON) * 100) / 100;
+    return Number.isInteger(rounded) ? String(rounded) : String(rounded);
+}
+
+function makeNumericQuestion(prompt, answer, unit = ""){
+    const distractorValues = [answer + 1, answer - 1, answer + 2, answer - 2, answer * 2, answer + 10];
+    const choices = [formatQuizNumber(answer)];
+
+    distractorValues.forEach(value => {
+        const choice = formatQuizNumber(value);
+        if(!choices.includes(choice) && choices.length < 4){
+            choices.push(choice);
+        }
+    });
+
+    for(let offset = 3; choices.length < 4; offset++){
+        const choice = formatQuizNumber(answer + offset);
+        if(!choices.includes(choice)){
+            choices.push(choice);
+        }
+    }
+
+    return [prompt, choices.map(choice => `${choice}${unit}`), 0];
+}
+
+function makeChoiceQuestion(prompt, correct, distractors){
+    const choices = [...new Set([correct, ...distractors].map(String))].slice(0,4);
+
+    while(choices.length < 4){
+        choices.push(`None of these (${choices.length})`);
+    }
+
+    return [prompt, choices, 0];
+}
+
+function shuffleQuizItems(items){
+    const shuffled = [...items];
+
+    for(let index = shuffled.length - 1; index > 0; index--){
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+    }
+
+    return shuffled;
+}
+
+function randomizeQuizAnswers(question){
+    const correctAnswer = question[1][question[2]];
+    const choices = shuffleQuizItems(question[1]);
+    return [question[0], choices, choices.indexOf(correctAnswer)];
+}
+
+const englishSubjectPairs = [
+    "artist","baker","bird","child","coach","doctor","farmer","friend","gardener","horse",
+    "island","jacket","kitten","leader","musician","neighbor","painter","river","student","writer"
+];
+const englishAgreementVerbs = [
+    ["walk","walks","walked","walking"],["talk","talks","talked","talking"],
+    ["help","helps","helped","helping"],["paint","paints","painted","painting"],
+    ["visit","visits","visited","visiting"],["open","opens","opened","opening"],
+    ["carry","carries","carried","carrying"],["watch","watches","watched","watching"],
+    ["cook","cooks","cooked","cooking"],["write","writes","wrote","writing"],
+    ["read","reads","read","reading"],["build","builds","built","building"],
+    ["draw","draws","drew","drawing"],["clean","cleans","cleaned","cleaning"],
+    ["dance","dances","danced","dancing"],["sing","sings","sang","singing"],
+    ["jump","jumps","jumped","jumping"],["drive","drives","drove","driving"],
+    ["plan","plans","planned","planning"],["study","studies","studied","studying"]
+];
+const englishSentenceEndings = [
+    "before the lesson","after school","in the garden","during the weekend","near the library"
+];
+const englishAdjectives = [
+    "bright","careful","curious","gentle","happy","lively","patient","quiet","swift","tiny",
+    "brave","clever","eager","friendly","glossy","kind","merry","polite","sleepy","warm",
+    "ancient","colorful","distant","elegant","fresh"
+];
+const englishNouns = [
+    "artist","basket","cloud","drummer","engine","forest","garden","harbor","insect","jacket",
+    "kitten","lantern","mountain","notebook","ocean","pencil","quilt","rainbow","student","turtle",
+    "umbrella","village","window","xylophone","yacht","zebra","bridge","castle","dolphin","feather","planet"
+];
+const englishVerbs = [
+    "arrived","bounced","climbed","danced","escaped","floated","glowed","hurried","imagined","juggled",
+    "knocked","laughed","marched","nodded","painted","raced","shivered","travelled","watched","yawned",
+    "zoomed","balanced","cheered","drifted","explored","fluttered","gathered","hummed","invented"
+];
+const englishAdverbs = [
+    "boldly","calmly","eagerly","fondly","gently","happily","instantly","joyfully","kindly","loudly",
+    "merrily","neatly","openly","patiently","quickly","quietly","rapidly","softly","tenderly","warmly",
+    "yearly","brightly","carefully"
+];
+const englishPastVerbData = [
+    ["begin","began","begins","beginning"],["bring","brought","brings","bringing"],
+    ["choose","chose","chooses","choosing"],["come","came","comes","coming"],
+    ["do","did","does","doing"],["drink","drank","drinks","drinking"],
+    ["eat","ate","eats","eating"],["find","found","finds","finding"],
+    ["give","gave","gives","giving"],["go","went","goes","going"],
+    ["have","had","has","having"],["know","knew","knows","knowing"],
+    ["make","made","makes","making"],["meet","met","meets","meeting"],
+    ["read","read","reads","reading"],["run","ran","runs","running"],
+    ["see","saw","sees","seeing"],["take","took","takes","taking"],
+    ["think","thought","thinks","thinking"],["write","wrote","writes","writing"]
+];
+const englishTenseSubjects = ["I","you","he","she","we","they","my cousin","the team","our teacher","the players"];
+const englishTenseObjects = ["a letter","the map","a song","the answer","the window","the game","a story","the cake","the picture","the message"];
+const englishPluralNouns = [
+    ["apple","apples"],["baby","babies"],["box","boxes"],["brush","brushes"],["bus","buses"],
+    ["cactus","cacti"],["child","children"],["city","cities"],["class","classes"],["country","countries"],
+    ["dish","dishes"],["family","families"],["fox","foxes"],["glass","glasses"],["hero","heroes"],
+    ["leaf","leaves"],["life","lives"],["loaf","loaves"],["man","men"],["match","matches"],
+    ["monkey","monkeys"],["mouse","mice"],["party","parties"],["person","people"],["potato","potatoes"],
+    ["quiz","quizzes"],["shelf","shelves"],["shoe","shoes"],["story","stories"],["thief","thieves"],
+    ["tooth","teeth"],["toy","toys"],["wolf","wolves"],["woman","women"],["church","churches"],
+    ["day","days"],["key","keys"],["knife","knives"],["loose leaf","loose leaves"],["photo","photos"],
+    ["radio","radios"],["roof","roofs"],["tomato","tomatoes"],["volcano","volcanoes"],["wish","wishes"],
+    ["deer","deer"],["fish","fish"],["foot","feet"],["sheep","sheep"],["trout","trout"]
+];
+const englishComparisonPairs = [
+    ["bright","brighter","brightest"],["calm","calmer","calmest"],["clever","cleverer","cleverest"],
+    ["cold","colder","coldest"],["fast","faster","fastest"],["friendly","friendlier","friendliest"],
+    ["funny","funnier","funniest"],["gentle","gentler","gentlest"],["happy","happier","happiest"],
+    ["high","higher","highest"],["kind","kinder","kindest"],["large","larger","largest"],
+    ["light","lighter","lightest"],["long","longer","longest"],["noisy","noisier","noisiest"],
+    ["quiet","quieter","quietest"],["safe","safer","safest"],["small","smaller","smallest"],
+    ["strong","stronger","strongest"],["warm","warmer","warmest"]
+];
+const englishComparisonSubjects = ["road","river","puzzle","garden","building","story","mountain","bridge","class","journey","room","team","trail","lesson","box","tree","song","painting","castle","village"];
+const englishComparisonFrames = ["than the old one","than yesterday","than the other","than it was before","than the first example"];
+
+const frenchErVerbs = [
+    "parler","chanter","jouer","regarder","aimer","chercher","demander","écouter","travailler","étudier",
+    "habiter","visiter","trouver","porter","donner","penser","danser","oublier","utiliser","marcher",
+    "préparer","dessiner","fermer","montrer","apporter","rentrer","gagner","expliquer","présenter","téléphoner",
+    "rester","laver","aider","décider","cuisiner"
+];
+const frenchPronouns = ["je","tu","il","elle","nous","vous","ils","elles"];
+const frenchEndings = ["e","es","e","e","ons","ez","ent","ent"];
+const frenchVerbContexts = [
+    "à la maison","avec ses amis","après le cours","dans le jardin","le matin",
+    "à la bibliothèque","pendant les vacances","avec la classe","au marché","chaque semaine"
+];
+const frenchArticleNouns = [
+    ["livre","le"],["maison","la"],["école","l'"],["amis","les"],["arbre","l'"],
+    ["jardin","le"],["fenêtre","la"],["stylo","le"],["orange","l'"],["voiture","la"],
+    ["chien","le"],["fleur","la"],["hôtel","l'"],["université","l'"],["cahier","le"],
+    ["pomme","la"],["ordinateur","l'"],["plage","la"],["image","l'"],["musée","le"]
+];
+const frenchArticleFrames = [
+    ["je","regarde"],["tu","cherches"],["il","observe"],["elle","aime"],["nous","visitons"],
+    ["vous","choisissez"],["ils","trouvent"],["elles","préparent"],["je","découvre"],["nous","utilisons"]
+];
+const frenchPlaces = [
+    "dans la classe","au parc","près de la maison","avec ses amis","après le cours",
+    "à la bibliothèque","dans le jardin","au marché","pendant le voyage","chaque matin"
+];
+const frenchVocabulary = [
+    ["bonjour","hello"],["merci","thank you"],["maison","house"],["chat","cat"],["chien","dog"],
+    ["livre","book"],["école","school"],["pomme","apple"],["rouge","red"],["bleu","blue"],
+    ["eau","water"],["pain","bread"],["ami","friend"],["famille","family"],["soleil","sun"],
+    ["lune","moon"],["ville","town"],["voiture","car"],["fleur","flower"],["heureux","happy"]
+];
+const frenchTranslationFrames = [
+    "Dans le vocabulaire de la classe, le mot","Dans cette petite histoire, le mot","Pour décrire la scène, le mot",
+    "Dans la conversation, le mot","Pour parler de cette image, le mot","Dans cette phrase, le mot",
+    "Pour comprendre le récit, le mot","Dans la liste de vocabulaire, le mot","Pour nommer cet objet, le mot",
+    "Dans le dialogue, le mot"
+];
+const frenchNames = ["Marie","Julie","Sophie","Camille","Alice","Emma","Louise","Claire","Nina","Léa"];
+const frenchAdjectivePairs = [
+    ["heureux","heureuse"],["petit","petite"],["grand","grande"],["actif","active"],["sportif","sportive"],
+    ["curieux","curieuse"],["sérieux","sérieuse"],["gentil","gentille"],["bon","bonne"],["ancien","ancienne"],
+    ["élégant","élégante"],["fatigué","fatiguée"],["intelligent","intelligente"],["joli","jolie"],["content","contente"],
+    ["fort","forte"],["vert","verte"],["lent","lente"],["poli","polie"],["amusant","amusante"]
+];
+const frenchAdjectiveContexts = [
+    "aujourd'hui","ce matin","après le cours","dans cette histoire","pendant la fête",
+    "à l'école","avec ses amies","dans le jardin","cette semaine","pour le spectacle"
+];
+
+function frenchNumberBelowHundred(number){
+    const small = ["zéro","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","onze","douze","treize","quatorze","quinze","seize"];
+    if(number < 17){return small[number]}
+    if(number < 20){return `dix-${small[number - 10]}`}
+
+    const tens = ["","","vingt","trente","quarante","cinquante","soixante"];
+    if(number < 70){
+        const decade = Math.floor(number / 10);
+        const unit = number % 10;
+        return unit === 0 ? tens[decade] : unit === 1 ? `${tens[decade]} et un` : `${tens[decade]}-${small[unit]}`;
+    }
+    if(number < 80){
+        const remainder = number - 60;
+        return remainder === 11 ? "soixante et onze" : `soixante-${frenchNumberBelowHundred(remainder)}`;
+    }
+    if(number === 80){return "quatre-vingts"}
+    return `quatre-vingt-${frenchNumberBelowHundred(number - 80)}`;
+}
+
+function createGeneratedQuizQuestion(subjectId, seed){
+    const type = seed % 5;
+    const value = Math.floor(seed / 5);
+
+    if(subjectId === "math"){
+        if(type === 0){
+            const first = 1 + (value * 37) % 100;
+            const second = 1 + (value * 53) % 100;
+            return makeNumericQuestion(`Calculate ${first} + ${second}.`, first + second);
+        }
+        if(type === 1){
+            const first = 2 + (value * 17) % 97;
+            const second = 2 + (value * 29) % 97;
+            return makeNumericQuestion(`Calculate ${first} × ${second}.`, first * second);
+        }
+        if(type === 2){
+            const percent = 5 + (value * 7) % 96;
+            const amount = 100 + (value * 11) % 900;
+            return makeNumericQuestion(`What is ${percent}% of ${amount}?`, amount * percent / 100);
+        }
+        if(type === 3){
+            const length = 1 + value % 100;
+            const width = 1 + Math.floor(value / 100) % 100;
+            return makeNumericQuestion(`Find the area of a ${length} cm by ${width} cm rectangle.`, length * width, " cm²");
+        }
+        const coefficient = 2 + value % 19;
+        const answer = 1 + Math.floor(value / 19);
+        const constant = 3 + (value * 7) % 50;
+        return makeNumericQuestion(`Solve for x: ${coefficient}x + ${constant} = ${coefficient * answer + constant}.`, answer);
+    }
+
+    if(subjectId === "science"){
+        if(type === 0){
+            const speed = 1 + value % 200;
+            const time = 1 + Math.floor(value / 200);
+            return makeNumericQuestion(`A vehicle travels at ${speed} m/s for ${time} seconds. How far does it travel?`, speed * time, " m");
+        }
+        if(type === 1){
+            const mass = 1 + value % 100;
+            const acceleration = 1 + Math.floor(value / 100);
+            return makeNumericQuestion(`What force accelerates a ${mass} kg object at ${acceleration} m/s²?`, mass * acceleration, " N");
+        }
+        if(type === 2){
+            const volume = 1 + value % 50;
+            const density = 1 + Math.floor(value / 50);
+            return makeNumericQuestion(`A sample has a mass of ${volume * density} g and volume ${volume} cm³. What is its density?`, density, " g/cm³");
+        }
+        if(type === 3){
+            const current = 1 + value % 40;
+            const resistance = 1 + Math.floor(value / 40);
+            return makeNumericQuestion(`A ${resistance} Ω resistor carries ${current} A. What is the voltage?`, current * resistance, " V");
+        }
+        const mass = value + 1;
+        return makeNumericQuestion(`Using g = 10 N/kg, what is the weight of a ${mass} kg object?`, mass * 10, " N");
+    }
+
+    if(subjectId === "geography"){
+        if(type === 0){
+            const mapDistance = 1 + value % 50;
+            const scale = 1 + Math.floor(value / 50);
+            return makeNumericQuestion(`A map uses 1 cm for ${scale} km. What real distance does ${mapDistance} cm represent?`, mapDistance * scale, " km");
+        }
+        if(type === 1){
+            const area = 1 + value % 40;
+            const density = 1 + Math.floor(value / 40);
+            return makeNumericQuestion(`A region has ${area * density} people across ${area} km². What is its population density?`, density, " people/km²");
+        }
+        if(type === 2){
+            const latitudeMagnitude = 1 + value % 90;
+            const longitudeMagnitude = 1 + Math.floor(value / 90);
+            const latitudeNorth = value % 2 === 0;
+            const longitudeEast = Math.floor(value / 2) % 2 === 0;
+            const latitude = latitudeNorth ? latitudeMagnitude : -latitudeMagnitude;
+            const longitude = longitudeEast ? longitudeMagnitude : -longitudeMagnitude;
+            const correct = `${latitudeNorth ? "Northern" : "Southern"} and ${longitudeEast ? "Eastern" : "Western"}`;
+            return makeChoiceQuestion(`Which hemispheres contain the coordinates ${latitude}°, ${longitude}°?`, correct, ["Northern and Eastern","Northern and Western","Southern and Eastern","Southern and Western"]);
+        }
+        if(type === 3){
+            const high = 10 + Math.floor(value / 20);
+            const low = high - 1 - value % 20;
+            return makeNumericQuestion(`A town's high temperature is ${high}°C and its low is ${low}°C. What is the temperature range?`, high - low, "°C");
+        }
+        const utcHour = value % 24;
+        const offsetQuarterHours = Math.floor(value / 24) - 41;
+        const localMinutes = ((utcHour * 60 + offsetQuarterHours * 15) % 1440 + 1440) % 1440;
+        const hour = Math.floor(localMinutes / 60);
+        const minute = localMinutes % 60;
+        const offsetSign = offsetQuarterHours >= 0 ? "+" : "−";
+        const offset = Math.abs(offsetQuarterHours) * 15;
+        const offsetText = `UTC${offsetSign}${Math.floor(offset / 60)}:${String(offset % 60).padStart(2,"0")}`;
+        const answerText = `${String(hour).padStart(2,"0")}:${String(minute).padStart(2,"0")}`;
+        return makeChoiceQuestion(`It is ${String(utcHour).padStart(2,"0")}:00 UTC. What is the local time at ${offsetText}?`, answerText, ["01:00","06:00","12:00","18:00"]);
+    }
+
+    if(subjectId === "computing"){
+        if(type === 0){
+            const decimal = 10000 + value;
+            return makeChoiceQuestion(`Convert the decimal number ${decimal} to binary.`, decimal.toString(2), [(decimal + 1).toString(2),(decimal - 1).toString(2),(decimal ^ 1).toString(2)]);
+        }
+        if(type === 1){
+            const decimal = 50000 + value;
+            const binary = decimal.toString(2);
+            return makeNumericQuestion(`What decimal value does the binary number ${binary} represent?`, decimal);
+        }
+        if(type === 2){
+            const kibibytes = value + 1;
+            return makeNumericQuestion(`Using 1 KiB = 1,024 bytes, how many bytes are in ${kibibytes} KiB?`, kibibytes * 1024, " bytes");
+        }
+        if(type === 3){
+            const start = 1 + value % 50;
+            const increment = 1 + Math.floor(value / 50) % 20;
+            const repeats = 1 + Math.floor(value / 1000);
+            return makeNumericQuestion(`An algorithm starts at ${start} and adds ${increment} ${repeats} times. What value does it finish on?`, start + increment * repeats);
+        }
+        const divisor = 2 + value % 19;
+        const quotient = 1 + Math.floor(value / 19);
+        const remainder = value % divisor;
+        const dividend = divisor * quotient + remainder;
+        return makeNumericQuestion(`What is the remainder when ${dividend} is divided by ${divisor}?`, remainder);
+    }
+
+    if(subjectId === "business"){
+        if(type === 0){
+            const units = 1 + value % 100;
+            const price = 1 + Math.floor(value / 100);
+            return makeNumericQuestion(`A shop sells ${units} items for $${price} each. What is its revenue?`, units * price, " dollars");
+        }
+        if(type === 1){
+            const revenue = 100 + value * 10;
+            const costs = Math.floor(revenue * (20 + value % 60) / 100);
+            return makeNumericQuestion(`A business has revenue of $${revenue} and costs of $${costs}. What is its profit?`, revenue - costs, " dollars");
+        }
+        if(type === 2){
+            const contribution = 1 + value % 50;
+            const units = 1 + Math.floor(value / 50);
+            return makeNumericQuestion(`Fixed costs are $${contribution * units}; each unit contributes $${contribution}. How many units are needed to break even?`, units, " units");
+        }
+        if(type === 3){
+            const sharePercent = 1 + value % 90;
+            const marketSize = 10000 + value * 100;
+            const sales = marketSize * sharePercent / 100;
+            return makeNumericQuestion(`A firm's sales are $${sales} in a $${marketSize} market. What is its market share?`, sharePercent, "%");
+        }
+        const price = 50 + value * 3;
+        const discount = 5 + value % 70;
+        return makeNumericQuestion(`An item costs $${price} and is discounted by ${discount}%. What is the sale price?`, price * (100 - discount) / 100, " dollars");
+    }
+
+    if(subjectId === "english"){
+        if(type === 0){
+            const subject = englishSubjectPairs[value % englishSubjectPairs.length];
+            const verb = englishAgreementVerbs[Math.floor(value / englishSubjectPairs.length) % englishAgreementVerbs.length];
+            const ending = englishSentenceEndings[Math.floor(value / (englishSubjectPairs.length * englishAgreementVerbs.length)) % englishSentenceEndings.length];
+            return makeChoiceQuestion(`Choose the verb: “The ${subject} ___ ${ending}.”`, verb[1], [verb[0],verb[2],verb[3]]);
+        }
+        if(type === 1){
+            let code = value;
+            const adjective = englishAdjectives[code % englishAdjectives.length]; code = Math.floor(code / englishAdjectives.length);
+            const noun = englishNouns[code % englishNouns.length]; code = Math.floor(code / englishNouns.length);
+            const verb = englishVerbs[code % englishVerbs.length]; code = Math.floor(code / englishVerbs.length);
+            const adverb = englishAdverbs[code % englishAdverbs.length];
+            const sentence = `The ${adjective} ${noun} ${verb} ${adverb}.`;
+            return makeChoiceQuestion(`Which word is the adverb in “${sentence}”?`, adverb, [adjective,noun,verb]);
+        }
+        if(type === 2){
+            const verb = englishPastVerbData[value % englishPastVerbData.length];
+            const subject = englishTenseSubjects[Math.floor(value / englishPastVerbData.length) % englishTenseSubjects.length];
+            const object = englishTenseObjects[Math.floor(value / (englishPastVerbData.length * englishTenseSubjects.length)) % englishTenseObjects.length];
+            return makeChoiceQuestion(`Complete in the past tense: “Yesterday, ${subject} ___ ${object}.”`, verb[1], [verb[0],verb[2],verb[3]]);
+        }
+        if(type === 3){
+            const item = englishPluralNouns[value % englishPluralNouns.length];
+            const count = 2 + Math.floor(value / englishPluralNouns.length);
+            return makeChoiceQuestion(`Choose the plural: “There are ${count} ___ in the study.”`, item[1], [item[0],`${item[0]}s`,`${item[0]}es`]);
+        }
+        const adjective = englishComparisonPairs[value % englishComparisonPairs.length];
+        const subject = englishComparisonSubjects[Math.floor(value / englishComparisonPairs.length) % englishComparisonSubjects.length];
+        const frame = englishComparisonFrames[Math.floor(value / (englishComparisonPairs.length * englishComparisonSubjects.length)) % englishComparisonFrames.length];
+        return makeChoiceQuestion(`Complete with the comparative: “The ${subject} is ___ ${frame}.”`, adjective[1], [adjective[0],adjective[2],`more ${adjective[0]}`]);
+    }
+
+    if(subjectId === "french"){
+        if(type === 0){
+            const verb = frenchErVerbs[value % frenchErVerbs.length];
+            const person = Math.floor(value / frenchErVerbs.length) % frenchPronouns.length;
+            const context = frenchVerbContexts[Math.floor(value / (frenchErVerbs.length * frenchPronouns.length)) % frenchVerbContexts.length];
+            const stem = verb.slice(0,-2);
+            const answer = stem + frenchEndings[person];
+            return makeChoiceQuestion(`Complete in the present tense: “${frenchPronouns[person]} ___ ${context}.”`, answer, [verb,stem + frenchEndings[(person + 1) % 8],stem + frenchEndings[(person + 2) % 8]]);
+        }
+        if(type === 1){
+            const noun = frenchArticleNouns[value % frenchArticleNouns.length];
+            const frame = frenchArticleFrames[Math.floor(value / frenchArticleNouns.length) % frenchArticleFrames.length];
+            const place = frenchPlaces[Math.floor(value / (frenchArticleNouns.length * frenchArticleFrames.length)) % frenchPlaces.length];
+            return makeChoiceQuestion(`Which article completes “${frame[0]} ${frame[1]} ___ ${noun[0]} ${place}”?`, noun[1], ["le","la","l'","les"]);
+        }
+        if(type === 2){
+            const word = frenchVocabulary[value % frenchVocabulary.length];
+            const frame = frenchTranslationFrames[Math.floor(value / frenchVocabulary.length) % frenchTranslationFrames.length];
+            const place = frenchPlaces[Math.floor(value / (frenchVocabulary.length * frenchTranslationFrames.length)) % frenchPlaces.length];
+            const distractors = frenchVocabulary.filter(entry => entry[1] !== word[1]).slice((value * 3) % 15, (value * 3) % 15 + 3).map(entry => entry[1]);
+            return makeChoiceQuestion(`${frame} “${word[0]}” ${place}. What does it mean in English?`, word[1], distractors);
+        }
+        if(type === 3){
+            const adjective = frenchAdjectivePairs[value % frenchAdjectivePairs.length];
+            const name = frenchNames[Math.floor(value / frenchAdjectivePairs.length) % frenchNames.length];
+            const context = frenchAdjectiveContexts[Math.floor(value / (frenchAdjectivePairs.length * frenchNames.length)) % frenchAdjectiveContexts.length];
+            return makeChoiceQuestion(`Complete with the feminine form: “${name} est ___ ${context}.”`, adjective[1], [adjective[0],`${adjective[0]}e`,`${adjective[0]}s`]);
+        }
+        const first = value % 50;
+        const second = Math.floor(value / 50) % 40;
+        const total = first + second;
+        return makeChoiceQuestion(`En français, how do you say ${first} + ${second}?`, frenchNumberBelowHundred(total), [frenchNumberBelowHundred((total + 1) % 99),frenchNumberBelowHundred((total + 2) % 99),frenchNumberBelowHundred((total + 3) % 99)]);
+    }
+
+    return null;
+}
+
+const historyTimeline = [
+    [-3100,"c. 3100 BCE: Egypt is unified"],[-2600,"c. 2600 BCE: The Great Pyramid is built"],
+    [-776,"776 BCE: The first recorded ancient Olympic Games"],[-509,"509 BCE: The Roman Republic begins"],
+    [-221,"221 BCE: Qin unifies China"],[-44,"44 BCE: Julius Caesar is assassinated"],
+    [476,"476 CE: The Western Roman Empire falls"],[622,"622: The Hijra begins the Islamic calendar"],
+    [1066,"1066: The Norman Conquest of England"],[1215,"1215: Magna Carta is sealed"],
+    [1347,"1347: The Black Death reaches Europe"],[1450,"c. 1450: Gutenberg's printing press spreads in Europe"],
+    [1492,"1492: Columbus's first voyage across the Atlantic"],[1517,"1517: The Protestant Reformation begins"],
+    [1607,"1607: Jamestown is founded"],[1776,"1776: The United States Declaration of Independence"],
+    [1789,"1789: The French Revolution begins"],[1804,"1804: Haiti declares independence"],
+    [1861,"1861: The American Civil War begins"],[1914,"1914: The First World War begins"],
+    [1917,"1917: The Russian Revolution"],[1939,"1939: The Second World War begins"],
+    [1945,"1945: The Second World War ends"],[1947,"1947: India gains independence"],
+    [1969,"1969: Apollo 11 lands on the Moon"],[1989,"1989: The Berlin Wall opens"],
+    [1994,"1994: South Africa holds its first multiracial election"],[2001,"2001: The first crew arrives at the International Space Station"]
+];
+
+function buildHistoryQuizPool(){
+    const questions = [];
+
+    for(let first = 0; first < historyTimeline.length - 3 && questions.length < GENERATED_QUESTIONS_PER_SUBJECT; first++){
+        for(let second = first + 1; second < historyTimeline.length - 2 && questions.length < GENERATED_QUESTIONS_PER_SUBJECT; second++){
+            for(let third = second + 1; third < historyTimeline.length - 1 && questions.length < GENERATED_QUESTIONS_PER_SUBJECT; third++){
+                for(let fourth = third + 1; fourth < historyTimeline.length && questions.length < GENERATED_QUESTIONS_PER_SUBJECT; fourth++){
+                    const selectedEvents = [historyTimeline[first],historyTimeline[second],historyTimeline[third],historyTimeline[fourth]];
+                    const events = selectedEvents.map(event => event[1]);
+                    const timelineDates = selectedEvents.map(event => event[0] < 0 ? `${Math.abs(event[0])} BCE` : `${event[0]} CE`);
+                    const earliest = (first + second + third + fourth) % 2 === 0;
+                    questions.push(makeChoiceQuestion(
+                        `Among the timeline dates ${timelineDates.join(", ")}, which event happened ${earliest ? "earliest" : "latest"}?`,
+                        earliest ? events[0] : events[3],
+                        earliest ? events.slice(1) : events.slice(0,3)
+                    ));
+                }
+            }
+        }
+    }
+
+    return questions;
+}
+
+function getSubjectQuizPool(subjectId){
+    if(generatedQuizPoolCache[subjectId]){
+        return generatedQuizPoolCache[subjectId];
+    }
+
+    const generated = subjectId === "history"
+        ? buildHistoryQuizPool()
+        : [];
+    const questionKeys = new Set(generated.map(question => JSON.stringify([question[0],[...question[1]].sort()])));
+
+    for(let seed = 0; subjectId !== "history" && generated.length < GENERATED_QUESTIONS_PER_SUBJECT && seed < GENERATED_QUESTIONS_PER_SUBJECT * 4; seed++){
+        const question = createGeneratedQuizQuestion(subjectId, seed);
+        const key = JSON.stringify([question[0],[...question[1]].sort()]);
+        if(!questionKeys.has(key)){
+            questionKeys.add(key);
+            generated.push(question);
+        }
+    }
+
+    if(generated.length < GENERATED_QUESTIONS_PER_SUBJECT){
+        throw new Error(`Could not build ${GENERATED_QUESTIONS_PER_SUBJECT} unique ${subjectId} questions.`);
+    }
+
+    generatedQuizPoolCache[subjectId] = [...qbank[subjectId], ...generated];
+    return generatedQuizPoolCache[subjectId];
+}
+
+
+/* =========================================================
+   UPDATE STATS
+   ========================================================= */
+
+function updateStats(){
+
+    const average = quizScores.length
+        ? Math.round(quizScores.reduce((total, score) => total + score, 0) / quizScores.length)
+        : "—";
+
+    document.getElementById(
+        "statScore"
+    ).textContent =
+        average === "—" ? average : average + "%";
+
+
+    document.getElementById(
+        "statQuizzes"
+    ).textContent =
+        completed;
+
+
+    document.getElementById(
+        "pQuizzes"
+    ).textContent =
+        completed;
+
+
+    document.getElementById(
+        "pBest"
+    ).textContent =
+        best + "%";
+
+}
+
+
+/* =========================================================
+   START QUIZ
+   ========================================================= */
+
+function startQuiz(){
+
+    const id =
+        document.getElementById(
+            "quizSubject"
+        ).value;
+
+
+    quizState = {
+
+        questions:
+            shuffleQuizItems(getSubjectQuizPool(id))
+            .slice(0,20)
+            .map(randomizeQuizAnswers),
+
+        index:0,
+        score:0,
+        locked:false
+
+    };
+
+
+    showQuestion();
+
+}
+
+
+/* =========================================================
+   SHOW QUESTION
+   ========================================================= */
+
+function showQuestion(){
+
+    const q =
+        quizState.questions[
+            quizState.index
+        ];
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+
+        (
+            quizState.index /
+            quizState.questions.length *
+            100
+        ) + "%";
+
+
+    document.getElementById(
+        "quizArea"
+    ).innerHTML = `
+
+        <div class="muted">
+
+            Question
+            ${quizState.index + 1}
+            of
+            ${quizState.questions.length}
+
+        </div>
+
+
+        <div class="quizQuestion">
+
+            ${q[0]}
+
+        </div>
+
+
+        <div class="options">
+
+            ${q[1].map((x,i) => `
+
+                <button
+                    class="option"
+                    onclick="answer(${i})"
+                >
+
+                    ${String.fromCharCode(65+i)}.
+                    ${x}
+
+                </button>
+
+            `).join("")}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   ANSWER QUIZ
+   ========================================================= */
+
+function answer(i){
+
+    if(quizState.locked)
+        return;
+
+
+    quizState.locked = true;
+
+
+    const q =
+        quizState.questions[
+            quizState.index
+        ];
+
+
+    const buttons =
+        document.querySelectorAll(
+            ".option"
+        );
+
+
+    buttons[q[2]]
+        .classList
+        .add("correct");
+
+
+    if(i !== q[2]){
+
+        buttons[i]
+            .classList
+            .add("wrong");
+
+    }else{
+
+        quizState.score++;
+
+    }
+
+
+    setTimeout(() => {
+
+        quizState.index++;
+
+        quizState.locked = false;
+
+
+        if(
+            quizState.index <
+            quizState.questions.length
+        ){
+
+            showQuestion();
+
+        }else{
+
+            finishQuiz();
+
+        }
+
+    },650);
+
+}
+
+
+/* =========================================================
+   FINISH QUIZ
+   ========================================================= */
+
+function finishQuiz(){
+
+    const pct =
+        Math.round(
+            quizState.score /
+            quizState.questions.length *
+            100
+        );
+
+
+    completed++;
+
+    best =
+        Math.max(
+            best,
+            pct
+        );
+
+    quizScores.push(pct);
+
+
+    localStorage.setItem(
+        "er_completed",
+        completed
+    );
+
+    localStorage.setItem(
+        "er_best",
+        best
+    );
+
+    localStorage.setItem(
+        "er_quiz_scores",
+        JSON.stringify(quizScores)
+    );
+
+
+    document.getElementById(
+        "quizProgress"
+    ).style.width =
+        "100%";
+
+
+    document.getElementById(
+        "quizArea"
+    ).innerHTML = `
+
+        <div
+            style="
+                text-align:center;
+                padding:25px
+            "
+        >
+
+            <div style="font-size:55px">
+
+                ${
+                    pct >= 80
+                        ? "🏆"
+                        : pct >= 50
+                            ? "👏"
+                            : "📚"
+                }
+
+            </div>
+
+
+            <h2>
+                Quiz complete!
+            </h2>
+
+
+            <p class="muted">
+
+                You scored
+                ${quizState.score}/
+                ${quizState.questions.length}
+
+                (${pct}%).
+
+            </p>
+
+
+            <button
+                class="btn primary"
+                onclick="startQuiz()"
+            >
+                Try again
+            </button>
+
+        </div>
+
+    `;
+
+
+    updateStats();
+
+}
+
+
+/* =========================================================
+   RESET PROGRESS
+   ========================================================= */
+
+function resetProgress(){
+
+    completed = 0;
+
+    best = 0;
+    quizScores = [];
+
+
+    localStorage.removeItem(
+        "er_completed"
+    );
+
+    localStorage.removeItem(
+        "er_best"
+    );
+
+    localStorage.removeItem(
+        "er_quiz_scores"
+    );
+
+
+    updateStats();
+
+}
+
+
+/* =========================================================
+   SMART STUDY GPT
+   ========================================================= */
+
+function cleanMathText(text){
+
+    return text
+
+        .toLowerCase()
+
+        .replace(/what is/g,"")
+        .replace(/calculate/g,"")
+        .replace(/work out/g,"")
+        .replace(/solve/g,"")
+        .replace(/please/g,"")
+        .replace(/=/g,"")
+        .replace(/×/g,"*")
+        .replace(/÷/g,"/")
+        .replace(/\bx\b/g,"*")
+        .replace(/\bmultiplied by\b/g,"*")
+        .replace(/\btimes\b/g,"*")
+        .replace(/\bdivided by\b/g,"/")
+        .replace(/\bdivide by\b/g,"/")
+        .replace(/\bplus\b/g,"+")
+        .replace(/\bminus\b/g,"-")
+        .replace(/\badded to\b/g,"+")
+        .replace(/\bsubtract\b/g,"-")
+        .replace(/\s+/g," ")
+        .trim();
+
+}
+
+
+/* =========================================================
+   MATH ENGINE
+   ========================================================= */
+
+function solveMath(text){
+
+    let t =
+        cleanMathText(text);
+
+
+    t = t.replace(
+        /(\d+)\s+(\d+)\/(\d+)/g,
+        "($1+$2/$3)"
+    );
+
+
+    t = t.replace(
+        /(\d+(?:\.\d+)?)\s*%/g,
+        "($1/100)"
+    );
+
+
+    t = t.replace(
+        /(\d+)\s*\/\s*(\d+)/g,
+        "($1/$2)"
+    );
+
+
+    t = t.replace(
+        /(\d+)\s*\^\s*(\d+)/g,
+        "Math.pow($1,$2)"
+    );
+
+
+    if(
+        !/^[0-9+\-*/().\sMathpow,]+$/.test(t)
+    ){
+
+        return null;
+
+    }
+
+
+    try{
+
+        const result =
+            Function(
+                '"use strict"; return (' +
+                t +
+                ')'
+            )();
+
+
+        if(
+            typeof result === "number" &&
+            Number.isFinite(result)
+        ){
+
+            return result;
+
+        }
+
+    }catch(e){}
+
+
+    return null;
+
+}
+
+
+/* =========================================================
+   FORMAT NUMBER
+   ========================================================= */
+
+function formatNumber(n){
+
+    if(Number.isInteger(n))
+        return n.toString();
+
+
+    return Number(
+        n.toFixed(6)
+    ).toString();
+
+}
+
+
+/* =========================================================
+   MATH EXPLANATION
+   ========================================================= */
+
+function explainMath(
+    original,
+    result
+){
+
+    const cleaned =
+        cleanMathText(original);
+
+
+    return `
+
+Let's work it out step by step.
+
+Expression:
+
+${cleaned}
+
+Calculate the expression:
+
+${cleaned} = ${formatNumber(result)}
+
+So the answer is ${formatNumber(result)}.
+
+`.trim();
+
+}
+
+
+/* =========================================================
+   SUBJECT KNOWLEDGE
+   ========================================================= */
+
+function studyKnowledge(text){
+
+    const t =
+        text.toLowerCase();
+
+
+    /* =========================
+       FRACTIONS
+       ========================= */
+
+    if(
+        t.includes("fraction") ||
+        t.includes("numerator") ||
+        t.includes("denominator")
+    ){
+
+        return `
+
+A fraction represents part of a whole.
+
+The numerator is the top number.
+
+The denominator is the bottom number.
+
+For example:
+
+3/4
+
+3 = numerator
+
+4 = denominator
+
+It means 3 equal parts out of 4.
+
+To multiply fractions, multiply the
+numerators together and the denominators
+together.
+
+Example:
+
+2/3 × 4/5 = 8/15
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       PERCENTAGES
+       ========================= */
+
+    if(
+        t.includes("percentage") ||
+        t.includes("percent")
+    ){
+
+        return `
+
+A percentage means "out of 100".
+
+For example:
+
+25% = 25/100 = 1/4
+
+To find 20% of 50:
+
+20/100 × 50 = 10
+
+So 20% of 50 is 10.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       RECTANGLE AREA
+       ========================= */
+
+    if(
+        t.includes("area") &&
+        t.includes("rectangle")
+    ){
+
+        return `
+
+The area of a rectangle is:
+
+Area = length × width
+
+For example:
+
+8 × 5 = 40
+
+So the area is 40 cm².
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       CIRCLE AREA
+       ========================= */
+
+    if(
+        t.includes("area") &&
+        t.includes("circle")
+    ){
+
+        return `
+
+The area of a circle is:
+
+A = πr²
+
+where r is the radius.
+
+For example, if r = 5:
+
+A = π × 5²
+
+A = 25π
+
+A ≈ 78.54
+
+So the area is approximately
+78.54 square units.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       TRIANGLE ANGLES
+       ========================= */
+
+    if(
+        t.includes("triangle") &&
+        t.includes("angle")
+    ){
+
+        return `
+
+The angles inside a triangle
+always add up to 180°.
+
+For example:
+
+50° + 60° + x = 180°
+
+x = 180° - 110°
+
+x = 70°
+
+So the missing angle is 70°.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       PHOTOSYNTHESIS
+       ========================= */
+
+    if(
+        t.includes("photosynthesis")
+    ){
+
+        return `
+
+Photosynthesis is how green plants
+make glucose using light energy.
+
+Plants take in:
+
+• Carbon dioxide
+• Water
+
+Light energy is used to make glucose.
+
+Oxygen is produced as a by-product.
+
+In simple form:
+
+carbon dioxide + water
+→ glucose + oxygen
+
+The process mainly happens in
+the chloroplasts of plant cells.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       CELLS
+       ========================= */
+
+    if(
+        t.includes("cell") ||
+        t.includes("cells")
+    ){
+
+        return `
+
+A cell is the basic unit of life.
+
+Important structures include:
+
+• Nucleus — controls cell activities.
+• Cytoplasm — where many reactions happen.
+• Cell membrane — controls what enters and leaves.
+• Mitochondria — release energy through respiration.
+
+Plant cells also have:
+
+• Cell wall
+• Chloroplasts
+• Large permanent vacuole
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       GRAVITY
+       ========================= */
+
+    if(
+        t.includes("gravity")
+    ){
+
+        return `
+
+Gravity is a force that attracts
+objects towards each other.
+
+On Earth, gravity pulls objects
+towards the centre of Earth.
+
+This is why objects fall when
+you drop them.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       ATOMS
+       ========================= */
+
+    if(
+        t.includes("atom") ||
+        t.includes("electron") ||
+        t.includes("proton") ||
+        t.includes("neutron")
+    ){
+
+        return `
+
+An atom is a tiny building block
+of matter.
+
+It contains:
+
+• Protons — positive charge
+• Neutrons — no charge
+• Electrons — negative charge
+
+Protons and neutrons are found
+in the nucleus.
+
+Electrons move around the nucleus.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       ENGLISH
+       ========================= */
+
+    if(
+        t.includes("noun") ||
+        t.includes("verb") ||
+        t.includes("adjective") ||
+        t.includes("adverb")
+    ){
+
+        return `
+
+Here is a quick guide:
+
+Noun — a person, place, thing or idea.
+
+Example:
+school
+
+Verb — an action or state.
+
+Example:
+run
+
+Adjective — describes a noun.
+
+Example:
+enormous
+
+Adverb — often describes how an
+action happens.
+
+Example:
+quickly
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       LANGUAGE DEVICES
+       ========================= */
+
+    if(
+        t.includes("metaphor") ||
+        t.includes("simile") ||
+        t.includes("personification")
+    ){
+
+        return `
+
+Simile:
+
+Compares things using "like" or "as".
+
+Example:
+
+"The clouds were like cotton."
+
+Metaphor:
+
+Says something is something else
+to create a comparison.
+
+Example:
+
+"The classroom was a zoo."
+
+Personification:
+
+Gives human qualities to something
+non-human.
+
+Example:
+
+"The wind whispered."
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       ALGORITHM
+       ========================= */
+
+    if(
+        t.includes("algorithm")
+    ){
+
+        return `
+
+An algorithm is a step-by-step
+set of instructions for solving
+a problem or completing a task.
+
+Example:
+
+1. Get the bread.
+2. Put it in the toaster.
+3. Start the toaster.
+4. Wait.
+5. Remove the toast.
+
+Computers use algorithms to solve
+problems.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       HTML CSS JS
+       ========================= */
+
+    if(
+        t.includes("html") ||
+        t.includes("css") ||
+        t.includes("javascript")
+    ){
+
+        return `
+
+HTML:
+
+Creates the structure of a webpage.
+
+CSS:
+
+Controls how the webpage looks.
+
+JavaScript:
+
+Makes the webpage interactive.
+
+Think of it like a house:
+
+HTML = structure
+CSS = appearance
+JavaScript = behaviour
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       LATITUDE
+       ========================= */
+
+    if(
+        t.includes("latitude")
+    ){
+
+        return `
+
+Latitude measures how far north
+or south a place is from the Equator.
+
+The Equator is 0° latitude.
+
+Latitude goes up to:
+
+90° North
+
+and
+
+90° South.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       LONGITUDE
+       ========================= */
+
+    if(
+        t.includes("longitude")
+    ){
+
+        return `
+
+Longitude measures how far east
+or west a place is from the
+Prime Meridian.
+
+The Prime Meridian is
+0° longitude.
+
+Longitude is measured up to
+180° east or west.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       HISTORY
+       ========================= */
+
+    if(
+        t.includes("primary source")
+    ){
+
+        return `
+
+A primary source is evidence
+created during the period being studied.
+
+Examples include:
+
+• Diaries
+• Letters
+• Photographs
+• Speeches
+• Original documents
+• Objects from the time
+
+A secondary source is created later
+and usually analyses or explains
+the past.
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       BUSINESS
+       ========================= */
+
+    if(
+        t.includes("profit") ||
+        t.includes("revenue")
+    ){
+
+        return `
+
+Revenue is the money a business
+receives from selling goods or services.
+
+Profit is what remains after costs
+are taken away.
+
+Formula:
+
+Profit = Revenue - Costs
+
+Example:
+
+Revenue = 500
+Costs = 300
+
+Profit = 500 - 300
+
+Profit = 200
+
+`.trim();
+
+    }
+
+
+    /* =========================
+       FRENCH
+       ========================= */
+
+    if(
+        t.includes("bonjour") ||
+        t.includes("french")
+    ){
+
+        return `
+
+Useful French words:
+
+Bonjour = Hello
+
+Merci = Thank you
+
+Au revoir = Goodbye
+
+S'il vous plaît = Please
+
+Oui = Yes
+
+Non = No
+
+Chat = Cat
+
+Chien = Dog
+
+Maison = House
+
+École = School
+
+`.trim();
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =========================================================
+   FLEXIBLE STUDY SEARCH
+   ========================================================= */
+
+const studyStopWords = new Set([
+    "a", "about", "an", "and", "are", "as", "at", "be", "been",
+    "but", "by", "can", "could", "did", "do", "does", "for", "from",
+    "give", "help", "how", "i", "in", "is", "it", "me", "my", "of",
+    "on", "or", "please", "tell", "that", "the", "their", "them", "this",
+    "to", "uh", "um", "was", "we", "were", "what", "when", "where",
+    "which", "who", "why", "with", "would", "you", "your"
+]);
+
+const studyPhraseGroups = [
+    ["photosynthesis", "plants make food", "plants make their food", "plant food", "turn sunlight into food"],
+    ["respiration", "breathing", "breathe", "breath", "release energy", "release energy from food", "make energy from food"],
+    ["human", "people", "person", "humans"],
+    ["circulation", "pump blood", "moves blood", "move blood around the body"],
+    ["gravity", "things fall down", "pulls things down", "force pulling objects toward earth"],
+    ["cell", "basic unit of life", "building block of life"],
+    ["atom", "tiny building block of matter", "building blocks of matter"],
+    ["fraction", "part of a whole", "top number", "bottom number"],
+    ["percentage", "percent", "out of 100", "percentage of"],
+    ["largest", "biggest", "greatest"],
+    ["smallest", "tiniest", "least"],
+    ["simile", "comparison using like or as", "compare using like or as"],
+    ["metaphor", "direct comparison", "says something is something else"],
+    ["personification", "human qualities to nonhuman things", "give human traits to objects"],
+    ["latitude", "north or south of the equator", "distance from the equator"],
+    ["longitude", "east or west of the prime meridian", "distance from the prime meridian"],
+    ["primary source", "evidence from the time", "created during the period"],
+    ["profit", "money left after costs", "revenue minus costs"],
+    ["revenue", "money from sales", "sales income"],
+    ["algorithm", "step by step instructions", "steps to solve a problem"],
+    ["melting", "solid turns into liquid", "change from solid to liquid"],
+    ["binary", "zeros and ones", "0 and 1"],
+    ["url", "web address", "website address"],
+    ["entrepreneur", "person who starts a business", "start a business"],
+    ["budget", "plan income and spending", "plan money"],
+    ["demand", "willingness and ability to buy", "want and can afford to buy"],
+    ["electrical conductor", "lets electricity pass", "conducts electricity"]
+];
+
+function normalizeStudyText(text){
+    return text
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+}
+
+function studyRoot(word){
+    if(word.length > 5 && word.endsWith("ies"))
+        return word.slice(0, -3) + "y";
+
+    if(word.length > 5 && word.endsWith("ing"))
+        return word.slice(0, -3);
+
+    if(word.length > 4 && word.endsWith("ed"))
+        return word.slice(0, -2);
+
+    if(word.length > 4 && word.endsWith("s") && !word.endsWith("ss"))
+        return word.slice(0, -1);
+
+    return word;
+}
+
+function studyTerms(text){
+    const normalized = normalizeStudyText(text);
+    const terms = new Set(
+        normalized
+            .split(" ")
+            .map(studyRoot)
+            .filter(word => word.length > 1 && !studyStopWords.has(word))
+    );
+
+    studyPhraseGroups.forEach(group => {
+        const matchesPhrase = group.some(phrase => {
+            const normalizedPhrase = normalizeStudyText(phrase);
+            return normalized.includes(normalizedPhrase);
+        });
+
+        if(matchesPhrase){
+            normalizeStudyText(group[0])
+                .split(" ")
+                .forEach(word => terms.add(studyRoot(word)));
+        }
+    });
+
+    return terms;
+}
+
+function findStudyContentAnswer(text){
+    const queryTerms = studyTerms(text);
+
+    if(!queryTerms.size)
+        return null;
+
+    const documents = [];
+
+    subjects.forEach(subject => {
+        (curriculumTopics[subject.id] || []).forEach(topic => {
+            documents.push({
+                kind:"topic",
+                subject,
+                title:topic,
+                searchable:topic,
+                response:`${topic} is included in the Grade ${grade} ${subject.name} curriculum. Open that unit in Curriculum for its learning overview.`
+            });
+        });
+
+        (qbank[subject.id] || []).forEach(question => {
+            const correctAnswer = question[2] >= 0
+                ? question[1][question[2]]
+                : "";
+
+            documents.push({
+                kind:"question",
+                subject,
+                title:question[0],
+                searchable:`${question[0]} ${correctAnswer}`,
+                response:`From the ${subject.name} quiz:\n\n${question[0]}\n\nAnswer: ${correctAnswer}.`
+            });
+        });
+    });
+
+    document
+        .querySelectorAll("#lessonBox h2, #lessonBox .lesson")
+        .forEach(note => {
+            const noteText = note.textContent.trim();
+
+            if(noteText){
+                documents.push({
+                    kind:"note",
+                    subject:null,
+                    title:noteText,
+                    searchable:noteText,
+                    response:`From the open curriculum note:\n\n${noteText}`
+                });
+            }
+        });
+
+    let bestMatch = null;
+
+    documents.forEach(documentEntry => {
+        const documentTerms = studyTerms(documentEntry.searchable);
+        const sharedTerms = Array.from(queryTerms)
+            .filter(term => documentTerms.has(term));
+
+        if(!sharedTerms.length)
+            return;
+
+        const queryCoverage = sharedTerms.length / queryTerms.size;
+        const documentCoverage = sharedTerms.length /
+            Math.min(documentTerms.size, 6);
+        const exactTopic = documentEntry.kind === "topic" &&
+            normalizeStudyText(text) === normalizeStudyText(documentEntry.title);
+        const score = queryCoverage * 0.7 + documentCoverage * 0.3 +
+            (exactTopic ? 0.3 : 0);
+
+        if(!bestMatch || score > bestMatch.score){
+            bestMatch = {
+                ...documentEntry,
+                score,
+                sharedCount:sharedTerms.length,
+                exactTopic
+            };
+        }
+    });
+
+    if(!bestMatch || bestMatch.score < 0.38)
+        return null;
+
+    if(bestMatch.sharedCount < 2 && !bestMatch.exactTopic)
+        return null;
+
+    return bestMatch.response;
+}
+
+
+/* =========================================================
+   SEND CHAT
+   ========================================================= */
+
+function getLocalStudyAnswer(text){
+
+    let answer = null;
+
+
+    /* =========================
+       MATH
+       ========================= */
+
+    const looksLikeMath =
+
+        /(\d+\s*[+\-*/×÷x]\s*\d+)/i.test(text) ||
+
+        /what is \d+/i.test(text) ||
+
+        /calculate/i.test(text) ||
+
+        /work out/i.test(text) ||
+
+        /solve/i.test(text) ||
+
+        /percent/i.test(text) ||
+
+        /%/.test(text);
+
+
+    if(looksLikeMath){
+
+        const result =
+            solveMath(text);
+
+
+        if(result !== null){
+
+            answer =
+                explainMath(
+                    text,
+                    result
+                );
+
+        }
+
+    }
+
+
+    /* =========================
+       SUBJECT KNOWLEDGE
+       ========================= */
+
+    if(!answer){
+
+        answer =
+            studyKnowledge(text);
+
+    }
+
+
+    if(!answer){
+
+        const normalizedText =
+            normalizeStudyText(text);
+
+        for(const group of studyPhraseGroups){
+
+            if(
+                group.some(phrase =>
+                    normalizedText.includes(
+                        normalizeStudyText(phrase)
+                    )
+                )
+            ){
+
+                answer =
+                    studyKnowledge(group[0]);
+
+                if(answer)
+                    break;
+
+            }
+
+        }
+
+    }
+
+
+    if(!answer){
+
+        answer =
+            findStudyContentAnswer(text);
+
+    }
+
+
+    /* =========================
+       BASIC CHAT
+       ========================= */
+
+    if(!answer){
+
+        const t =
+            text.toLowerCase();
+
+
+        if(
+            /^(hello|hi|hey|good morning|good afternoon)\b/.test(
+                normalizeStudyText(text)
+            )
+        ){
+
+            answer =
+                "Hey! 👋 I'm ready to study. Give me a maths problem or ask about science, English, geography, computing, history, French or business.";
+
+        }
+
+
+        else if(
+            t.includes("who are you") ||
+            t.includes("what are you")
+        ){
+
+            answer =
+                "I'm EcoleRonsardHub's Study GPT. I'm designed to explain school topics at Grade " +
+                grade +
+                " level.";
+
+        }
+
+
+        else if(
+            /\bhelp\b/.test(normalizeStudyText(text))
+        ){
+
+            answer = `
+
+Sure! Try something like:
+
+• What is 45 × 12?
+• What is 144 ÷ 12?
+• Explain fractions.
+• What is photosynthesis?
+• Explain an algorithm.
+• What is a metaphor?
+• What is latitude?
+
+`.trim();
+
+        }
+
+    }
+
+
+    /* =========================
+       FALLBACK
+       ========================= */
+
+    if(!answer){
+
+        answer =
+            "I couldn't find a confident match in this program's built-in topics, explanations, or quiz questions. Try adding the subject or a key term. I can only answer from content included in this page.";
+
+    }
+
+
+    return answer;
+
+}
+
+
+function getStudySiteContext(question){
+
+    const lessonBox =
+        document.getElementById("lessonBox");
+    const queryTerms = studyTerms(question);
+    const quizMatches = [];
+    const topicMatches = [];
+
+    subjects.forEach(subject => {
+        (curriculumTopics[subject.id] || []).forEach(topic => {
+            const topicTerms = studyTerms(`${subject.name} ${topic}`);
+            const overlap = Array.from(queryTerms)
+                .filter(term => topicTerms.has(term)).length;
+
+            if(overlap){
+                topicMatches.push({
+                    score:overlap / Math.max(queryTerms.size, 1),
+                    subject:subject.name,
+                    topic
+                });
+            }
+        });
+
+        (qbank[subject.id] || []).forEach(
+            ([quizQuestion, choices, correctIndex]) => {
+                const quizTerms = studyTerms(
+                    `${quizQuestion} ${choices.join(" ")} ${choices[correctIndex]}`
+                );
+                const overlap = Array.from(queryTerms)
+                    .filter(term => quizTerms.has(term)).length;
+
+                if(overlap){
+                    quizMatches.push({
+                        score:overlap / Math.max(queryTerms.size, 1),
+                        subject:subject.name,
+                        question:quizQuestion,
+                        choices,
+                        answer:choices[correctIndex]
+                    });
+                }
+            }
+        );
+    });
+
+    return {
+        grade,
+        availableSubjects:subjects.map(subject => subject.name),
+        relatedTopics:topicMatches
+            .sort((first, second) => second.score - first.score)
+            .slice(0, 8)
+            .map(({score, ...item}) => item),
+        relatedQuizQuestions:quizMatches
+            .sort((first, second) => second.score - first.score)
+            .slice(0, 3)
+            .map(({score, ...item}) => item),
+        openCurriculumNotes:lessonBox
+            ? lessonBox.innerText.slice(0, 900)
+            : ""
+    };
+
+}
+
+
+async function sendChat(){
+
+    const input =
+        document.getElementById("chatInput");
+
+    const text = input.value.trim();
+
+    if(!text)
+        return;
+
+    addMsg(text, "user");
+    input.value = "";
+    addMsg("I'm unavailable right now. Go ask Google.", "bot");
+
+}
+
+
+/* =========================================================
+   ADD CHAT MESSAGE
+   ========================================================= */
+
+function addMsg(
+    t,
+    type
+){
+
+    const d =
+        document.createElement(
+            "div"
+        );
+
+
+    d.className =
+        "msg " + type;
+
+
+    d.textContent = t;
+
+
+    document.getElementById(
+        "messages"
+    ).appendChild(d);
+
+
+    const messages =
+        document.getElementById(
+            "messages"
+        );
+
+
+    messages.scrollTop =
+        messages.scrollHeight;
+
+    return d;
+
+}
+
+
+/* =========================================================
+   NAVIGATION EVENTS
+   ========================================================= */
+
+document
+    .querySelectorAll(".nav button")
+    .forEach(b => {
+
+        b.onclick = () =>
+            showPage(
+                b.dataset.page
+            );
+
+    });
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+const seasonPicker = document.getElementById("seasonPicker");
+const seasonThemeButtons = document.querySelectorAll("[data-theme-choice]");
+const seasonNames = {
+    classic:"Classic",
+    halloween:"Halloween",
+    christmas:"Christmas",
+    easter:"Easter",
+    spring:"Spring",
+    summer:"Summer",
+    rain:"Rain",
+    cloudy:"Cloudy",
+    winter:"Winter",
+    thanksgiving:"Thanksgiving",
+    "halloween+cloudy":"Halloween + Cloudy",
+    "thanksgiving+rain":"Thanksgiving + Rain",
+    "winter+cloudy":"Winter + Cloudy",
+    "spring+rain":"Spring + Rain",
+    "summer+rain":"Summer + Rain",
+    "cloudy+summer":"Cloudy + Summer",
+    "spring+easter":"Spring + Easter",
+    "christmas+winter":"Christmas + Winter"
+};
+const seasonIcons = {
+    classic:"🌿",
+    halloween:"🎃",
+    christmas:"🎄",
+    easter:"🐣",
+    spring:"🌼",
+    summer:"☀️",
+    rain:"🌧️",
+    cloudy:"☁️",
+    winter:"❄️",
+    thanksgiving:"🦃",
+    "halloween+cloudy":"🎃☁️",
+    "thanksgiving+rain":"🦃🌧️",
+    "winter+cloudy":"❄️☁️",
+    "spring+rain":"🌼🌧️",
+    "summer+rain":"☀️🌧️",
+    "cloudy+summer":"☁️☀️",
+    "spring+easter":"🌼🐣",
+    "christmas+winter":"🎄❄️"
+};
+
+function resolveThemeSelection(selection){
+    const normalized = selection || "classic";
+
+    if(normalized.includes("+")){
+        return normalized.split("+").map(part => part.trim()).filter(Boolean);
+    }
+
+    if(normalized.includes("-")){
+        return normalized.split("-").map(part => part.trim()).filter(Boolean);
+    }
+
+    return [normalized];
+}
+
+function setSeasonTheme(selection, save = true){
+    const activeTheme = selection === "auto"
+        ? window.getSeasonalTheme()
+        : selection;
+    const selectedThemes = resolveThemeSelection(activeTheme);
+
+    document.body.classList.remove(
+        "theme-halloween",
+        "theme-christmas",
+        "theme-easter",
+        "theme-spring",
+        "theme-summer",
+        "theme-rain",
+        "theme-cloudy",
+        "theme-winter",
+        "theme-thanksgiving"
+    );
+
+    selectedThemes.forEach(theme => {
+        if(theme !== "classic"){
+            document.body.classList.add(`theme-${theme}`);
+        }
+    });
+
+    if(save){
+        localStorage.setItem("er_theme", selection);
+    }
+
+    const themeLabel = selection === "auto"
+        ? `Auto · ${seasonNames[activeTheme] || "Classic"}`
+        : seasonNames[activeTheme] || "Classic";
+
+    document.getElementById("seasonThemeIcon").textContent = seasonIcons[activeTheme] || seasonIcons.classic;
+    document.getElementById("seasonThemeCurrent").textContent = themeLabel;
+    document.getElementById("seasonThemeTrigger").setAttribute(
+        "aria-label",
+        `Choose seasonal design. Current: ${themeLabel}`
+    );
+
+    seasonThemeButtons.forEach(button => {
+        button.setAttribute(
+            "aria-pressed",
+            button.dataset.themeChoice === selection
+        );
+    });
+}
+
+setSeasonTheme(initialSeasonChoice, false);
+
+document.getElementById("seasonThemeTrigger").addEventListener("click", () => {
+    seasonPicker.showModal();
+});
+
+document.getElementById("closeSeasonPicker").addEventListener("click", () => {
+    seasonPicker.close();
+});
+
+seasonThemeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        setSeasonTheme(button.dataset.themeChoice);
+        seasonPicker.close();
+    });
+});
+
+seasonPicker.addEventListener("click", event => {
+    if(event.target === seasonPicker){
+        seasonPicker.close();
+    }
+});
+
+document.getElementById(
+    "themeBtn"
+).onclick = () => {
+
+    document.body
+        .classList
+        .toggle("dark");
+
+
+    const dark =
+        document.body
+        .classList
+        .contains("dark");
+
+
+    localStorage.setItem(
+        "er_dark",
+        dark
+    );
+
+
+    document.getElementById(
+        "themeBtn"
+    ).textContent =
+
+        dark
+            ? "☀ Light mode"
+            : "☾ Dark mode";
+
+};
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+document.getElementById(
+    "mobileMenu"
+).onclick = () => {
+
+    document.getElementById(
+        "sidebar"
+    ).classList.toggle(
+        "open"
+    );
+
+};
+
+
+/* =========================================================
+   ENTER TO SEND CHAT
+   ========================================================= */
+
+document.getElementById(
+    "chatInput"
+).addEventListener(
+    "keydown",
+    e => {
+
+        if(e.key === "Enter"){
+
+            sendChat();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   LOAD SAVED DARK MODE
+   ========================================================= */
+
+if(
+    localStorage.getItem(
+        "er_dark"
+    ) === "true"
+){
+
+    document.body
+        .classList
+        .add("dark");
+
+
+    document.getElementById(
+        "themeBtn"
+    ).textContent =
+        "☀ Light mode";
+
+}
+
+
+/* =========================================================
+   INITIALISE APP
+   ========================================================= */
+
+renderGrades();
+
+renderSubjects();
+
+setGrade(grade);
+
+updateStats();
+
+loadCurriculum();
+
+
+</script>
+
+</body>
+</html>
